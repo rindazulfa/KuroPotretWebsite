@@ -34,16 +34,6 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="dropdown cart">
-                            <a class="dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="flaticon-bag"></i>
-                            </a>
-                            <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <div class="single_product">
-    
-                                    </div>
-                                </div> -->
-                        </div>
                     </nav>
                 </div>
             </div>
