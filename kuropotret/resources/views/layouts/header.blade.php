@@ -12,43 +12,25 @@
                         <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="index.blade.php">Home</a>
+                                    <a class="nav-link" href="{{url('/')}}">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{url('about.blade.php')}}">about</a>
+                                    <a class="nav-link" href="{{url('about')}}">about</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="services.blade.php">services</a>
+                                    <a class="nav-link" href="{{url('services')}}">services</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="" id="navbarDropdownpro" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         portfolio
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownpro">
-                                        <a class="dropdown-item" href="portfolio.blade.php">portfolio</a>
-                                        <a class="dropdown-item" href="portfolio_details.blade.php">portfolio details</a>
-                                    </div>
-                                </li>
-
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.blade.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Blog
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="blog.blade.php"> blog</a>
-                                        <a class="dropdown-item" href="single-blog.blade.php">Single blog</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="blog.blade.php" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        pages
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-                                        <a class="dropdown-item" href="elements.blade.php">Elements</a>
+                                        <a class="dropdown-item" href="{{url('portofolio')}}">portfolio</a>
+                                        <a class="dropdown-item" href="{{url('portofolio_detail')}}">portfolio details</a>
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.blade.php">contact</a>
+                                    <a class="nav-link" href="{{url('contact')}}">contact</a>
                                 </li>
                             </ul>
                         </div>

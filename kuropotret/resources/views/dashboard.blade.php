@@ -1,28 +1,5 @@
 @extends('layouts.app')
 @section('content')
-    <!--::about_us part start::-->
-    <section class="about_us padding_top">
-        <div class="container">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-lg-8">
-                    <div class="about_us_text text-center">
-                        <h5>About our studio</h5>
-                        <h2>The Camera Is An Instrument That Teaches People
-                            how to See without a Camera</h2>
-                        <p>It’s the end of summer the sweltering heat makes human
-                            sweat in the night and makes the plants and trees wilt
-                            even in the moonlit nights. The eastern wind breeze brings
-                            an eerie feeling, that the monsoon clouds are soon coming,
-                            there is a strange silence in the ears, the sky gets darker
-                            and darker, the flash of lightning illuminates the dark skies,
-                            the sound of thunder fills the heart with fear.</p>
-                        <a href="#" class="btn_2">read more</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--::about_us part end::-->
 
     <!-- gallery_part part start-->
     <section class="gallery_part section_padding">
@@ -40,10 +17,9 @@
                     <div class="portfolio-filter filters">
                         <ul>
                             <li class="active" data-filter="all">All photos</li>
-                            <li data-filter="1"> weeding</li>
-                            <li data-filter="2">fashion</li>
-                            <li data-filter="3">portrait</li>
-                            <li data-filter="4">magazine</li>
+                            <li data-filter="1">Resespsi</li>
+                            <li data-filter="2">Akad</li>
+                            <li data-filter="3">Pre-Wedding</li>
                         </ul>
                     </div>
                 </div>
@@ -51,16 +27,8 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="gallery_part_item filtr-container">
-                        <a href="portfolio_details.html" class="img-gal filtr-item" data-category="1"
-                            style="background-image: url('img/gallery/gallery_item_1.png')">
-                            <div class="single_gallery_item">
-                                <div class="single_gallery_item_iner">
-                                    <div class="gallery_item_text">
-                                        <p>Fashion photography</p>
-                                        <h4>Smiling beutiful women</h4>
-                                    </div>
-                                </div>
-                            </div>
+                        <a class="img-gal filtr-item" data-category="1"
+                            style="background-image: url('img/gallery/gallery_item_1.jpg')">
                         </a>
                         <a href="portfolio_details.html" class="img-gal width-1 filtr-item" data-category="2"
                             style="background-image: url('img/gallery/gallery_item_2.png')">
@@ -142,7 +110,6 @@
                         <h4>wedding photography</h4>
                         <p>World the end of summer the sweltering heat makes human
                             sweat in the night and man plants and trees wilt even</p>
-                        <a href="#" class="btn_1">read more</a>
                     </div>
                     <div class="single_offer_img d-none d-md-block">
                         <img src="img/single_offer_img_2.png" alt="">
@@ -159,63 +126,25 @@
                             strange silence in the ears, the sky gets darker and
                             darker, the flash of lightning illuminates the dark
                             skies all time needs band the sound of thunder fills the heart with fear.</p>
-                        <a href="#" class="btn_1">read more</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_offer_text text-center wedding">
+                        <span class="flaticon-love-and-romance"></span>
+                        <h4>wedding photography</h4>
+                        <p>World the end of summer the sweltering heat makes human
+                            sweat in the night and man plants and trees wilt even</p>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-6">
+                    <div class="single_offer_img d-none d-md-block">
+                        <img src="img/single_offer_img_1.png" alt="">
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <!--::our_service part end::-->
-
-    <!--::review_part part start::-->
-    <section class="review_part">
-        <div class="container">
-            <div class="row align-items-center justify-content-between">
-                <div class="col-md-5">
-                    <div class="review_img">
-                        <img src="img/review_bg.png" alt="">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="review_slider owl-carousel">
-                        <div class="review_part_text">
-                            <h5>Testimnonials</h5>
-                            <h2>With efficiency to
-                                unlock more opportunities</h2>
-                            <p>Saw shall light. Us their to place had creepeth day
-                                night great wher appear to. Hath, called, sea called,
-                                gathering wherein open make living Female itself
-                                gathering man. Waters and, two. Bearing. Saw she'd
-                                all let she'd lights abundantly blessed.</p>
-                            <h3>Mitchel Jeferson, <span>CEO of softking</span> </h3>
-                        </div>
-                        <div class="review_part_text">
-                            <h2>With efficiency to
-                                unlock more opportunities</h2>
-                            <p>Saw shall light. Us their to place had creepeth day
-                                night great wher appear to. Hath, called, sea called,
-                                gathering wherein open make living Female itself
-                                gathering man. Waters and, two. Bearing. Saw she'd
-                                all let she'd lights abundantly blessed.</p>
-                            <h3>Mitchel Jeferson, <span>CEO of softking</span> </h3>
-                        </div>
-                        <div class="review_part_text">
-                            <h2>With efficiency to
-                                unlock more opportunities</h2>
-                            <p>Saw shall light. Us their to place had creepeth day
-                                night great wher appear to. Hath, called, sea called,
-                                gathering wherein open make living Female itself
-                                gathering man. Waters and, two. Bearing. Saw she'd
-                                all let she'd lights abundantly blessed.</p>
-                            <h3>Mitchel Jeferson, <span>CEO of softking</span> </h3>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--::review_part part end::-->
 
     <!--::pricing part start::-->
     <section class="pricing_part section_padding home_page_pricing">
@@ -313,12 +242,9 @@
                             <img src="img/blog/blog_1.png" alt="">
                         </div>
                         <div class="post_text_1 pr_30">
-                            <h5><span> By Michal</span> / March 30 , 2019</h5>
-                            <a href="blog.html">
+                            <h5>March 30 , 2019</h5>
                                 <h3>Mad whales gathering open can't</h3>
                             </a>
-                            <p>Is life form dominion under very seasons together
-                                them divide so, she'd bearing sixth </p>
                         </div>
                     </div>
                 </div>
@@ -328,12 +254,10 @@
                             <img src="img/blog/blog_2.png" alt="">
                         </div>
                         <div class="post_text_1 pr_30">
-                            <h5><span> By Michal</span> / March 30 , 2019</h5>
-                            <a href="blog.html">
+                            <h5>March 30 , 2019</h5>
+                            <a>
                                 <h3>Creepeth grass brought over man</h3>
                             </a>
-                            <p>Is life form dominion under very seasons together
-                                them divide so, she'd bearing sixth </p>
                         </div>
                     </div>
                 </div>
@@ -343,12 +267,10 @@
                             <img src="img/blog/blog_3.png" alt="">
                         </div>
                         <div class="post_text_1 pr_30">
-                            <h5><span> By Michal</span> / March 30 , 2019</h5>
-                            <a href="blog.html">
+                            <h5>March 30 , 2019</h5>
+                            <a>
                                 <h3>Mad whales gathering open Evening</h3>
                             </a>
-                            <p>Is life form dominion under very seasons together
-                                them divide so, she'd bearing sixth </p>
                         </div>
                     </div>
                 </div>

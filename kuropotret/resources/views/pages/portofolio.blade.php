@@ -32,10 +32,9 @@
                     <div class="portfolio-filter filters">
                         <ul>
                             <li data-filter="all">All photos</li>
-                            <li data-filter="1">weeding</li>
-                            <li data-filter="2">fashion</li>
-                            <li data-filter="3">portrait</li>
-                            <li data-filter="4">magazine</li>
+                            <li data-filter="1">Resespsi</li>
+                            <li data-filter="2">Akad</li>
+                            <li data-filter="3">Pre-Wedding</li>
                         </ul>
                     </div>
                 </div>

@@ -36,7 +36,6 @@
                         <h4>wedding photography</h4>
                         <p>World the end of summer the sweltering heat makes human
                             sweat in the night and man plants and trees wilt even</p>
-                        <a href="#" class="btn_1">read more</a>
                     </div>
                     <div class="single_offer_img d-none d-md-block">
                         <img src="img/single_offer_img_2.png" alt="">
@@ -53,7 +52,19 @@
                             strange silence in the ears, the sky gets darker and
                             darker, the flash of lightning illuminates the dark
                             skies all time needs band the sound of thunder fills the heart with fear.</p>
-                        <a href="#" class="btn_1">read more</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_offer_text text-center wedding">
+                        <span class="flaticon-love-and-romance"></span>
+                        <h4>wedding photography</h4>
+                        <p>World the end of summer the sweltering heat makes human
+                            sweat in the night and man plants and trees wilt even</p>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-6">
+                    <div class="single_offer_img d-none d-md-block">
+                        <img src="img/single_offer_img_1.png" alt="">
                     </div>
                 </div>
             </div>
