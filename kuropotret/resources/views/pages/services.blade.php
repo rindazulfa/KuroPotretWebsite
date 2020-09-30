@@ -2,153 +2,102 @@
 @section('content')
 
 
-    <!-- breadcrumb start-->
-    <section class="breadcrumb breadcrumb_bg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="breadcrumb_iner text-center">
-                        <div class="breadcrumb_iner_item">
-                            <h2>best <span>services</span></h2>
-                        </div>
-                    </div>
+<!-- breadcrumb start-->
+
+<!-- breadcrumb start-->
+
+<!--::our_service part start::-->
+
+<!--::our_service part end::-->
+
+<!--::pricing part start::-->
+<section class="pricing_part section_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section_tittle">
+                    <p>Price table</p>
+                    <h2>pricing plan</h2>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- breadcrumb start-->
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-sm-6">
+                <div class="single_pricing_part">
+                    <div class="pricing_tittle">
 
-    <!--::our_service part start::-->
-    <section class="our_service padding_top">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="section_tittle">
-                        <p>our service</p>
-                        <h2>what we offer</h2>
+                        <p>Pra-Nikah</p>
+                    </div>
+                    <div class="pricing_content">
+                        <h3>Rp 700.000 </h3>
+                        <ul>
+                            <li>20 Edited Photo</li>
+                            <li>1 Minute Cinematic Video</li>
+                            <li>Unlimited Revision</li>
+                        </ul>
+                        <a href="#" class="btn_2">book Now</a>
                     </div>
                 </div>
             </div>
-            <div class="row align-items-center">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_offer_text text-center wedding">
-                        <span class="flaticon-love-and-romance"></span>
-                        <h4>wedding photography</h4>
-                        <p>World the end of summer the sweltering heat makes human
-                            sweat in the night and man plants and trees wilt even</p>
+            <div class="col-lg-4 col-sm-6">
+                <div class="single_pricing_part">
+                    <div class="pricing_tittle">
+
+                        <p>Akad</p>
                     </div>
-                    <div class="single_offer_img d-none d-md-block">
-                        <img src="img/single_offer_img_2.png" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-8 col-md-6">
-                    <div class="single_offer_img d-none d-md-block">
-                        <img src="img/single_offer_img_1.png" alt="">
-                    </div>
-                    <div class="single_offer_text text-center nature">
-                        <span class="flaticon-leaf"></span>
-                        <h4>Nature photography</h4>
-                        <p>that the monsoon clouds are soon coming, there is a
-                            strange silence in the ears, the sky gets darker and
-                            darker, the flash of lightning illuminates the dark
-                            skies all time needs band the sound of thunder fills the heart with fear.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_offer_text text-center wedding">
-                        <span class="flaticon-love-and-romance"></span>
-                        <h4>wedding photography</h4>
-                        <p>World the end of summer the sweltering heat makes human
-                            sweat in the night and man plants and trees wilt even</p>
-                    </div>
-                </div>
-                <div class="col-lg-8 col-md-6">
-                    <div class="single_offer_img d-none d-md-block">
-                        <img src="img/single_offer_img_1.png" alt="">
+                    <div class="pricing_content">
+                        <h3>Rp 1.000.000 </h3>
+                        <ul>
+                            <li>30 Edit Foto</li>
+                            <li>3-5 Menit Video</li>
+                            <li>Revisi Tanpa Batas</li>
+                            <li>4 Jam Penyewaan</li>
+                        </ul>
+                        <a href="#" class="btn_2">book Now</a>
                     </div>
                 </div>
             </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="single_pricing_part">
+                    <div class="pricing_tittle">
+
+                        <p>Resepsi</p>
+                    </div>
+                    <div class="pricing_content">
+                        <h3>Rp 1.500.000 </h3>
+                        <ul>
+                            <li>30 Edit Foto</li>
+                            <li>3-5 Menit Video</li>
+                            <li>Revisi Tanpa Batas</li>
+                            <li>10 Jam Penyewaan</li>
+                        </ul>
+                        <a href="#" class="btn_2">book Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="single_pricing_part">
+                    <div class="pricing_tittle">
+
+                        <p>Music Video</p>
+                    </div>
+                    <div class="pricing_content">
+                        <h3>Rp 1.500.000</h3>
+                        <ul>
+                            <li>1 Music Video</li>
+                            <li>1 Thumbnail Video</li>
+                            <li>Revisi Tanpa Batas</li>
+                            <li>*Belum Termasuk Biaya Oprasional</li>
+                        </ul>
+                        <a href="#" class="btn_2">book Now</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </section>
-    <!--::our_service part end::-->
-
-    <!--::pricing part start::-->
-    <section class="pricing_part section_padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="section_tittle">
-                        <p>Price table</p>
-                        <h2>pricing plan</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_pricing_part">
-                        <div class="pricing_tittle">
-                            <img src="img/icon/feature_icon_1.svg" alt="">
-                            <p>Standard</p>
-                        </div>
-                        <div class="pricing_content">
-                            <h3>$50.00 <span>/ mo</span></h3>
-                            <ul>
-                                <li>2GB Bandwidth</li>
-                                <li>Two Account</li>
-                                <li>15GB Storage</li>
-                                <li>Sale After Service</li>
-                                <li>3 Host Domain</li>
-                                <li>24/7 Support</li>
-                            </ul>
-                            <a href="#" class="btn_2">book Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_pricing_part">
-                        <div class="pricing_tittle">
-                            <img src="img/icon/feature_icon_2.svg" alt="">
-                            <p>Standard</p>
-                        </div>
-                        <div class="pricing_content">
-                            <h3>$50.00 <span>/ mo</span></h3>
-                            <ul>
-                                <li>2GB Bandwidth</li>
-                                <li>Two Account</li>
-                                <li>15GB Storage</li>
-                                <li>Sale After Service</li>
-                                <li>3 Host Domain</li>
-                                <li>24/7 Support</li>
-                            </ul>
-                            <a href="#" class="btn_2">book Now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="single_pricing_part">
-                        <div class="pricing_tittle">
-                            <img src="img/icon/feature_icon_3.svg" alt="">
-                            <p>Standard</p>
-                        </div>
-                        <div class="pricing_content">
-                            <h3>$50.00 <span>/ mo</span></h3>
-                            <ul>
-                                <li>2GB Bandwidth</li>
-                                <li>Two Account</li>
-                                <li>15GB Storage</li>
-                                <li>Sale After Service</li>
-                                <li>3 Host Domain</li>
-                                <li>24/7 Support</li>
-                            </ul>
-                            <a href="#" class="btn_2">book Now</a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!--::pricing part end::-->
+    </div>
+</section>
+<!--::pricing part end::-->
 
 
 @endsection

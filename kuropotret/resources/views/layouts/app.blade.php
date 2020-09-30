@@ -36,9 +36,9 @@
                 <div class="col-lg-5">
                     <div class="banner_text text-center">
                         <div class="banner_text_iner">
-                            <h5>Model Photography</h5>
+                            <h5>Photography & Videography</h5>
                             <h1>Kuro <span>Potret</span></h1>
-                            <p>Capturing moments from today</p>
+                            <p>Abadikan Momen Istimewamu</p>
                         </div>
                     </div>
                 </div>

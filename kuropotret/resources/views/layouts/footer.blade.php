@@ -5,12 +5,11 @@
                 <div class="col-sm-6 col-md-6 col-lg-3">
                     <div class="single-footer-widget footer_icon">
                         <h4>Contact Info</h4>
-                        <p>4361 Morningview Lane Artland , Pall Street
-                            Latimer, IA 50452 / 23654</p>
+                        <p>Puri Indah, blok FB-25, Sidoarjo, Jawa TImur</p>
                         <ul>
-                            <li><a href="#"><i class="ti-mobile"></i>+02 - 32 365 2654</a></li>
-                            <li><a href="#"><i class="ti-email"></i>ariclaw@law.com</a></li>
-                            <li><a href="#"><i class="ti-world"></i> ariclawyerfirm.com</a></li>
+                            <li><a href="#"><i class="ti-mobile"></i>+62 878-6961-8049</a></li>
+                            <li><a href="#"><i class="ti-email"></i>kuropotret@gmail.com</a></li>
+                         
                         </ul>
                     </div>
                 </div>
