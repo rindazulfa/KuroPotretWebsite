@@ -2324,12 +2324,12 @@ ul {
   width: 100%;
   box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.05);
   top: 0;
-  background-color: #ff4800;
+  background-color: #fff;
 }
 
 /* line 68, ../../01 cl html template/187 Shotgear Photography/187 Shotgear Photography Html/sass/_menu.scss */
 .menu_fixed .nav-link {
-  color: #fff !important;
+  color: #000 !important;
 }
 
 /* line 72, ../../01 cl html template/187 Shotgear Photography/187 Shotgear Photography Html/sass/_menu.scss */
