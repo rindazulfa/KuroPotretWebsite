@@ -13,7 +13,7 @@ class PriceController extends Controller
      */
     public function index()
     {
-        return view("pages.pricing.prewed");
+        return view("pages.pricing");
     }
 
     /**
