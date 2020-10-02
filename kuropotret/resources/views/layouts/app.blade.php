@@ -8,6 +8,7 @@
     <title>shotgear</title>
     <link rel="icon" href="{{url('img/favicon.png')}}">
     <!-- Bootstrap CSS -->
+    
     <link rel="stylesheet" href="{{url('css/bootstrap.min.css')}}">
     <!-- animate CSS -->
     <link rel="stylesheet" href="{{url('css/animate.css')}}">
@@ -19,12 +20,14 @@
     <link rel="stylesheet" href="{{url('css/flaticon.css')}}">
     <link rel="stylesheet" href="{{url('css/themify-icons.css')}}">
     <link rel="stylesheet" href="{{url('css/swiper.min.css')}}">
+    <link rel="stylesheet" href="css/nice-select.css">
     <!-- font awesome CSS -->
     <link rel="stylesheet" href="{{url('css/magnific-popup.css')}}">
     <!-- swiper CSS -->
     <link rel="stylesheet" href="{{url('css/slick.css')}}">
     <!-- style CSS -->
     <link rel="stylesheet" href="{{url('css/style.css')}}">
+
 </head>
 
 <body>
@@ -80,6 +83,8 @@
     <script src="{{url('js/mail-script.js')}}"></script>
     <!-- custom js -->
     <script src="{{url('js/custom.js')}}"></script>
+
+    
 </body>
 
 </html>
