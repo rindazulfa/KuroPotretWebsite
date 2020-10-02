@@ -35,7 +35,7 @@
                             <li>Unlimited Revision</li>
                             <li>*Belum Termasuk Biaya Oprasional</li>
                         </ul>
-                        <a href="#" class="btn_2">book Now</a>
+                        <a href="prewed.blade.php" class="btn_2">book Now</a>
                     </div>
                 </div>
             </div>

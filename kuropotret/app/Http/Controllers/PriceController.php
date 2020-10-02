@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ContactController extends Controller
+class PriceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('pages\contact');
+        return view("pages.pricing.prewed");
     }
 
     /**
@@ -45,7 +45,7 @@ class ContactController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**

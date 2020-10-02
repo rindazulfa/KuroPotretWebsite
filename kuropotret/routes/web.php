@@ -16,23 +16,8 @@ Route::get('/', function () {
     return view('dashboard');
     //master- nama file
 });
-
-Route::get('about', function () {
-    return view('pages\about');
-});
-
-Route::get('services', function () {
-    return view('pages\services');
-});
-
-Route::get('portofolio', function () {
-    return view('pages\portofolio');
-});
-
-Route::get('portofolio_detail', function () {
-    return view('pages\portofolio_details');
-});
-
-Route::get('contact', function () {
-    return view('pages\contact');
-});
+// Route::resource('dashboard','DashboardController');
+Route::resource('pricing','PriceController');
+Route::resource('about','AboutController');
+Route::resource('contact','ContactController');
+Route::resource('portofolio','PortofolioController');
