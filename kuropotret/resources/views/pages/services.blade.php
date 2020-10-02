@@ -16,8 +16,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="section_tittle">
-                    <p>Price table</p>
-                    <h2>pricing plan</h2>
+                    <h2>pricing</h2>
                 </div>
             </div>
         </div>
@@ -26,7 +25,7 @@
                 <div class="single_pricing_part">
                     <div class="pricing_tittle">
 
-                        <p>Pra-Nikah</p>
+                        <p>Pre-Wedding</p>
                     </div>
                     <div class="pricing_content">
                         <h3>Rp 700.000 </h3>
@@ -34,6 +33,7 @@
                             <li>20 Edited Photo</li>
                             <li>1 Minute Cinematic Video</li>
                             <li>Unlimited Revision</li>
+                            <li>*Belum Termasuk Biaya Oprasional</li>
                         </ul>
                         <a href="#" class="btn_2">book Now</a>
                     </div>
@@ -61,7 +61,7 @@
                 <div class="single_pricing_part">
                     <div class="pricing_tittle">
 
-                        <p>Resepsi</p>
+                        <p>Wedding</p>
                     </div>
                     <div class="pricing_content">
                         <h3>Rp 1.500.000 </h3>

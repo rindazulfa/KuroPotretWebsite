@@ -20,14 +20,8 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{url('services')}}">Pricing</a>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdownpro" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        portfolio
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownpro">
-                                        <a class="dropdown-item" href="{{url('portofolio')}}">portfolio</a>
-                                        <a class="dropdown-item" href="{{url('portofolio_detail')}}">portfolio details</a>
-                                    </div>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url('portofolio')}}">Portofolio</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{url('contact')}}">contact</a>
