@@ -49,6 +49,9 @@
     @yield('content');
 
     @include('layouts.footer');
+    <div class="fixed-bottom">
+        <a href="https://api.whatsapp.com/send?phone=6287869618049"><img src="img/chatwa.png" alt="Chat Whatsapp" width="10%" style="float: right"></a>
+    </div>
 
     <!-- jquery plugins here-->
     <script src="{{url('js/jquery-1.12.1.min.js')}}"></script>
