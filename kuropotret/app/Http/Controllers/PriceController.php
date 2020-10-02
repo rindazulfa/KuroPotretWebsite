@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\DB;
+
 class PriceController extends Controller
 {
     /**
@@ -13,7 +15,20 @@ class PriceController extends Controller
      */
     public function index()
     {
-        return view("pages.pricing.prewed");
+        $paket = DB::table('packages')
+            ->select(
+                'packages.id',
+                'packages.name',
+                'packages.price',
+                'packages.qty_photos',
+                'packages.qty_edit',
+                'packages.duration',
+                'packages.price_operational'
+            )
+            ->get();
+        $data['packages'] = $paket;
+        return view('pages.pricing', $data);
+        // return view('pemasukan.index', $data);
     }
 
     /**
@@ -45,7 +60,6 @@ class PriceController extends Controller
      */
     public function show($id)
     {
-        
     }
 
     /**

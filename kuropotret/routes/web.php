@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+
 Route::get('/', function () {
     return view('dashboard');
     //master- nama file
@@ -21,3 +24,5 @@ Route::resource('pricing','PriceController');
 Route::resource('about','AboutController');
 Route::resource('contact','ContactController');
 Route::resource('portofolio','PortofolioController');
+
+require('admin.php');

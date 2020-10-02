@@ -18,10 +18,12 @@ class CreateTransactionsTable extends Migration
             $table->string("name");
             $table->unsignedBigInteger('package_id');
             $table->foreign('package_id')->references('id')->on('packages')->onDelete('cascade');
-            $table->integer("date");
+            $table->date("date");
             $table->integer("duration");
-            $table->integer("location");
-            $table->integer("location");
+            $table->string("location");
+            $table->string("description");
+            $table->integer("qty");
+            $table->integer("total");
             $table->timestamps();
         });
     }

@@ -17,12 +17,11 @@ class CreatePackagesTable extends Migration
             $table->id();
             $table->string("name");
             $table->integer("price");
-            $table->integer("qty");
-            $table->integer("duration");
-            $table->string("warranty");
-            $table->time("time");
-            $table->string("description");
-            $table->string("category");
+            $table->string("qty_photos");
+            $table->string("qty_edit");
+            $table->string("duration");
+            $table->string("working_hours");
+            $table->string("price_operational");
             $table->timestamps();
         });
     }
