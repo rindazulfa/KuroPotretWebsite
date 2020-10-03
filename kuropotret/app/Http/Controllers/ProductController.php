@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Facades\DB;
 
-class PriceController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,12 +22,12 @@ class PriceController extends Controller
                 'packages.qty_photos',
                 'packages.qty_edit',
                 'packages.duration',
+                'packages.working_hours',
                 'packages.price_operational'
             )
             ->get();
         $data['packages'] = $paket;
-        return view('pages.pricing', $data);
-        // return view('pemasukan.index', $data);
+        return view("pages.admin.product", $data);
     }
 
     /**
@@ -60,6 +59,7 @@ class PriceController extends Controller
      */
     public function show($id)
     {
+        //
     }
 
     /**

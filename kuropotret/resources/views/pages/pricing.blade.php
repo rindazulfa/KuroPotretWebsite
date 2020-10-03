@@ -26,10 +26,10 @@
                 <div class="single_pricing_part">
                 
                     <div class="pricing_tittle">
-                        <p>{{$key->name}}</p>
+                        <p>{{$key->name_pack}}</p>
                     </div>
                     <div class="pricing_content">
-                        <h3>{{$key->price}}</h3>
+                        <h3>Rp {{$key->price}}</h3>
                         <ul>
                             <li>{{$key->qty_photos}}</li>
                             <li>{{$key->qty_edit}}</li>

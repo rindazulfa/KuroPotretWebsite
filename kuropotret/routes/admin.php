@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/admin', function ()
-{
-    return view('pages.admin.index');
-});
+
+Route::resource('product','ProductController');
+Route::resource('order','OrderController');
+
+?>

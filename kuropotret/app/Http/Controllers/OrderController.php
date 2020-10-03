@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Facades\DB;
-
-class PriceController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,20 +13,21 @@ class PriceController extends Controller
      */
     public function index()
     {
-        $paket = DB::table('packages')
-            ->select(
-                'packages.id',
-                'packages.name_pack',
-                'packages.price',
-                'packages.qty_photos',
-                'packages.qty_edit',
-                'packages.duration',
-                'packages.price_operational'
-            )
-            ->get();
-        $data['packages'] = $paket;
-        return view('pages.pricing', $data);
-        // return view('pemasukan.index', $data);
+        $transaksi = DB::table('transactions')->join('packages','transactions.package_id','=','packages.id')
+        ->select(
+            'transactions.id',
+            'transactions.name',
+            'packages.name_pack',
+            'transactions.date',
+            'transactions.location',
+            'transactions.description',
+            'transactions.total',
+           
+        )
+        ->get();
+    $data['transactions'] = $transaksi;
+    return view("pages.admin.order", $data);
+        
     }
 
     /**
@@ -60,6 +59,7 @@ class PriceController extends Controller
      */
     public function show($id)
     {
+        //
     }
 
     /**
