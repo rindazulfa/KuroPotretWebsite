@@ -24,7 +24,7 @@
                     </a>
                     <ul class="collapse show" id="dashboard" data-parent="#sidebar-menu">
                         <div class="sub-menu">
-                            <li class="active">
+                            <li>
                                 <a class="sidenav-item-link" href="{{url('product')}}">
                                     <span class="nav-text">Daftar Produk</span>
                                 </a>

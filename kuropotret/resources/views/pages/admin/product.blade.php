@@ -6,7 +6,7 @@
 
         <h2 style="text-align: center; margin-bottom: 20px;">Tabel Daftar Produk</h2>
        
-        <a href="https://datatables.net/examples/styling/display.html" target="_blank" class="btn btn-outline-primary btn-md text-uppercase" style="margin-bottom: 20px;" >
+        <a href="{{url('tambahproduct')}}" class="btn btn-outline-primary btn-md text-uppercase" style="margin-bottom: 20px;" >
              Tambah Produk
         </a>
         <table id="basic-data-table" class="table nowrap" style="width:100%">
@@ -21,7 +21,7 @@
                     <th>Durasi</th>
                     <th>Waktu Sewa</th>
                     <th>Biaya Oprasional</th>
-
+                    <th>Menu</th>
                 </tr>
 
             </thead>
@@ -37,7 +37,7 @@
                     <td>{{$key->duration}}</th>
                     <td>{{$key->working_hours}}</td>
                     <td>{{$key->price_operational}}</td>
-
+                    <td><button type="submit" class="btn btn-primary btn-default" style="background-color: darkorange; margin-right: 10px;">Edit</button><button type="submit" class="btn btn-primary btn-default" style="background-color: red;">Delete</button></td>
                 </tr>
                 @endforeach
             </tbody>
