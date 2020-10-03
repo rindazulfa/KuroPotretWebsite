@@ -37,7 +37,7 @@ class TambahproductController extends Controller
     {
         DB::table('packages')->insert([
             //'id' => $request->id,
-            'name_pack' => $request->name,
+            'name_pack' => $request->nama,
             'price' => $request->harga,
             'qty_photos' => $request->jumlah_foto,
             'qty_edit' => $request->jumlah_edit,

@@ -12,8 +12,9 @@
 										</div>
 										<div class="card-body">
 											<form action="tambahproduct.store" method="POST">
+											{{ csrf_field() }}
 												<div class="form-group">
-													<label for="exampleFormControlInput1">Nama Produk</label>
+													<label>Nama Produk</label>
 													<input name="nama" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Product Name">
 												</div>
 												<div class="form-group">
