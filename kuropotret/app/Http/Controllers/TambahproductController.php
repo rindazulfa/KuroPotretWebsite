@@ -46,7 +46,7 @@ class TambahproductController extends Controller
             'price_operational' => $request->biaya_ops
         ]);
 
-        return redirect('pages.admin.product');
+        return redirect('product');
     }
 
     /**

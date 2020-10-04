@@ -5,7 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>shotgear</title>
+    <title>Kuro Potret</title>
     <link rel="icon" href="{{url('img/favicon.png')}}">
     <!-- Bootstrap CSS -->
     
@@ -53,7 +53,7 @@
 
     @include('layouts.footer');
     <div class="fixed-bottom">
-        <a href="https://api.whatsapp.com/send?phone=6287869618049"><img src="img/chatwa.png" alt="Chat Whatsapp" width="10%" style="float: right"></a>
+        <a href="https://api.whatsapp.com/send?phone=6287869618049"><img src="img/chatwa.png" alt="Chat Whatsapp" width="10%" style="float: right; margin: 20px"></a>
     </div>
 
     <!-- jquery plugins here-->

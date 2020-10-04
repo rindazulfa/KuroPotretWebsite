@@ -11,7 +11,7 @@
 											<h2>Tambah daftar produk</h2>
 										</div>
 										<div class="card-body">
-											<form action="tambahproduct.store" method="POST">
+											<form method="POST" action="tambahproduct.store">
 											{{ csrf_field() }}
 												<div class="form-group">
 													<label>Nama Produk</label>
@@ -42,10 +42,12 @@
 													<input name="biaya_ops" class="form-control" id="exampleFormControlPassword" placeholder="Enter Price">
 												</div>
 												<div class="form-footer pt-4 pt-5 mt-4 border-top">
-													<button type="submit" class="btn btn-primary btn-default">Submit</button>
-													<button type="submit" class="btn btn-secondary btn-default" href="{{url('product')}}">Cancel</button>
+													<input  type="submit" class="btn btn-primary btn-default" value="Submit">
+													<a href="{{url('product')}}" ><input  type="button" class="btn btn-secondary btn-default" value="Cancel"></a>
 												</div>
 											</form>
+											
+												
 										</div>
 									</div>
 

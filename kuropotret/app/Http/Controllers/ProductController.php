@@ -57,9 +57,10 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
-        //
+        // $blog = TbBlog::find($id);
+        // return view('site.show',compact('blog'))->renderSections()['content'];
     }
 
     /**
