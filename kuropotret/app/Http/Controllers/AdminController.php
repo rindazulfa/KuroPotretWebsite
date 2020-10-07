@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use Illuminate\Support\Facades\DB;
-
-class PriceController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,21 +13,7 @@ class PriceController extends Controller
      */
     public function index()
     {
-        $paket = DB::table('packages')
-            ->select(
-                'packages.id',
-                'packages.name_pack',
-                'packages.price',
-                'packages.qty_photos',
-                'packages.qty_edit',
-                'packages.duration',
-                'packages.working_hours',
-                'packages.price_operational'
-            )
-            ->get();
-        $data['packages'] = $paket;
-        return view('pages.pricing', $data);
-        // return view('pemasukan.index', $data);
+        return view('admin.index');
     }
 
     /**
@@ -61,6 +45,7 @@ class PriceController extends Controller
      */
     public function show($id)
     {
+        //
     }
 
     /**
