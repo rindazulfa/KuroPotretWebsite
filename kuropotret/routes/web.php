@@ -24,5 +24,6 @@ Route::resource('pricing','PriceController');
 Route::resource('about','AboutController');
 Route::resource('contact','ContactController');
 Route::resource('portofolio','PortofolioController');
+Route::resource('form','OrderController',['only'=>['show']]);
 
 require('admin.php');

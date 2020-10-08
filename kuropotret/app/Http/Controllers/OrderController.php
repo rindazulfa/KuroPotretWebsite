@@ -16,6 +16,7 @@ class OrderController extends Controller
         $transaksi = DB::table('transactions')->join('packages','transactions.package_id','=','packages.id')
         ->select(
             'transactions.id',
+            'packages.id',
             'transactions.name',
             'packages.name_pack',
             'transactions.date',
@@ -59,7 +60,14 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        //
+        $beli = DB::table('packages')
+        ->select(
+            'packages.id',
+            'packages.name_pack'
+        )
+        ->get();
+        $data2['packages'] = $beli;
+        return view("pages.form", $data2);
     }
 
     /**

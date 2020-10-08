@@ -36,7 +36,7 @@
                             <li>{{$key->duration}}</li>
                             <li>{{$key->price_operational}}</li>
                         </ul>
-                        <a href="prewed.blade.php" class="btn_2">book Now</a>
+                        <a href="{{url('form')}}" class="btn_2">book Now</a>
                     </div>
                     
                 </div>
