@@ -14,16 +14,17 @@ class CreateTransactionsTable extends Migration
     public function up()
     {
         Schema::create('transactions', function (Blueprint $table) {
-            $table->id();
-            $table->string("name");
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('users_id');
+            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('package_id');
             $table->foreign('package_id')->references('id')->on('packages')->onDelete('cascade');
             $table->date("date");
-            $table->integer("duration");
+            $table->integer("status");
             $table->string("location");
             $table->string("description");
-            $table->integer("qty");
             $table->integer("total");
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -27,7 +27,7 @@ class OrderController extends Controller
         )
         ->get();
     $data['transactions'] = $transaksi;
-    return view("pages.admin.order", $data);
+    return view("admin.order", $data);
         
     }
 

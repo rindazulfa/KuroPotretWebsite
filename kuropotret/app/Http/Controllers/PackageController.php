@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\package;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 
-class ProductController extends Controller
+class PackageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +29,7 @@ class ProductController extends Controller
             )
             ->get();
         $data['packages'] = $paket;
-        return view("pages.admin.product", $data);
+        return view("admin.package.index", $data);
     }
 
     /**
@@ -37,7 +39,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+       
+        return view('admin.package.create');
     }
 
     /**
@@ -48,7 +51,17 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $create = DB::table('packages')
+            ->insert([
+                'name_pack' => $request->get('nama'),
+                'price' => $request->get('harga'),
+                'qty_photos' => $request->get('jml_foto'),
+                'qty_edit' => $request->get('jml_edit'),
+                'duration' => $request->get('durasi'),
+                'working_hours' => $request->get('penyewaan'),
+                'price_operational' => $request->get('biaya')
+            ]);
+            return redirect('/package');
     }
 
     /**
@@ -57,10 +70,10 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request, $id)
+    public function show($id)
     {
-        // $blog = TbBlog::find($id);
-        // return view('site.show',compact('blog'))->renderSections()['content'];
+        $detail = package::find($id);
+        return view('admin.package.detail_package', ['detail' => $detail]);
     }
 
     /**
@@ -71,7 +84,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $edit = package::find($id);
+        return view('admin.package.edit', ['edit' => $edit]);
     }
 
     /**
@@ -83,7 +97,20 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $edit = DB::table('packages')
+            ->where('id', $id)
+            ->update([
+                'name_pack' => $request->get('nama'),
+                'price' => $request->get('harga'),
+                'qty_photos' => $request->get('jml_foto'),
+                'qty_edit' => $request->get('jml_edit'),
+                'duration' => $request->get('durasi'),
+                'working_hours' => $request->get('penyewaan'),
+                'price_operational' => $request->get('biaya_operasional')
+            ]);
+
+
+        return redirect('/package');
     }
 
     /**
@@ -94,6 +121,8 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete = package::findOrFail($id);
+        $delete->delete();
+        return redirect()->route('package.index');
     }
 }
