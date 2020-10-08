@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="{{url('css/slick.css')}}">
     <!-- style CSS -->
     <link rel="stylesheet" href="{{url('css/style.css')}}">
+    <link rel="stylesheet" href="{{url('css/nice-select.css')}}">
 
 </head>
 

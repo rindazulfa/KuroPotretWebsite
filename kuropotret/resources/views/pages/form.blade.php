@@ -1,10 +1,8 @@
 @extends('layouts.app')
 @section('content')
+<section class="pricing_part section_padding">
 <div class="container">
         <div class="row">
-
-
-
             <div class="col-lg-8">
                 <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
                     <div class="row">
@@ -56,4 +54,5 @@
             </div>
         </div>
     </div>
+</section>
 @endsection
