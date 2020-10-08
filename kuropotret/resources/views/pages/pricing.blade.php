@@ -36,6 +36,7 @@
                             <li>{{$key->duration}}</li>
                             <li>{{$key->price_operational}}</li>
                         </ul>
+                        <!-- ini button -->
                         <a href="{{url('order/form')}}" class="btn_2">book Now</a>
                     </div>
                     

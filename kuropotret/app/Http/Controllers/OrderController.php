@@ -58,6 +58,7 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    // ini buat form
     public function show($id)
     {
         $beli = DB::table('packages')

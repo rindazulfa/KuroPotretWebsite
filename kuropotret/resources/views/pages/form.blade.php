@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+<!-- ini form -->
 <section class="pricing_part section_padding">
 <div class="container">
         <div class="row">
