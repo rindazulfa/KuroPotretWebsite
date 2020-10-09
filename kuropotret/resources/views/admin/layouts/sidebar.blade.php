@@ -18,7 +18,7 @@
                     <h6 class="px-4 py-2">Menu</h6>
                 </li>
                 <li class="has-sub active">
-                    <a class="sidenav-item-link" href="/rt/penduduk">
+                    <a class="sidenav-item-link" href="#">
                         <i class="mdi mdi-account-box-multiple"></i>
                         <span class="nav-text">Dashboard</span>
                     </a>
@@ -30,19 +30,19 @@
                     </a>
                 </li>
                 <li class="has-sub ">
-                    <a class="sidenav-item-link" href="/rt/tamu-kunjungan">
+                    <a class="sidenav-item-link" href="{{url('order')}}">
                         <i class="mdi mdi-account-supervisor-circle"></i>
                         <span class="nav-text">Order</span>
                     </a>
                 </li>
                 <li class="has-sub ">
-                    <a class="sidenav-item-link" href="/rt/register">
+                    <a class="sidenav-item-link" href="#">
                         <i class="mdi mdi-email-outline"></i>
                         <span class="nav-text">Contact</span>
                     </a>
                 </li>
                 <li class="has-sub ">
-                    <a class="sidenav-item-link" href="/rt/request">
+                    <a class="sidenav-item-link" href="{{url('users')}}">
                         <i class="mdi mdi-email-plus-outline"></i>
                         <span class="nav-text">Users</span>
                     </a>

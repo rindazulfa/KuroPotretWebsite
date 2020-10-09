@@ -61,6 +61,14 @@ class PriceController extends Controller
      */
     public function show($id)
     {
+        $beli = DB::table('packages')
+        ->select(
+            'packages.id',
+            'packages.name_pack'
+        )
+        ->get();
+        $data2['packages'] = $beli;
+        return view("pages.form", $data2);
     }
 
     /**

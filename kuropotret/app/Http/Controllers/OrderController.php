@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+
 class OrderController extends Controller
 {
     /**
@@ -13,22 +15,22 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $transaksi = DB::table('transactions')->join('packages','transactions.package_id','=','packages.id')
-        ->select(
-            'transactions.id',
-            'packages.id',
-            'transactions.name',
-            'packages.name_pack',
-            'transactions.date',
-            'transactions.location',
-            'transactions.description',
-            'transactions.total',
-           
-        )
-        ->get();
-    $data['transactions'] = $transaksi;
-    return view("admin.order", $data);
-        
+        $transaksi = DB::table('transactions')->join('packages', 'transactions.package_id', '=', 'packages.id')
+            ->join('users', 'transactions.users_id', '=', 'users.id')
+            ->select(
+                'transactions.id',
+                'users.name',
+                'packages.name_pack',
+                'transactions.date',
+                'transactions.status',
+                'transactions.location',
+                'transactions.description',
+                'transactions.total',
+
+            )
+            ->get();
+        $data['transactions'] = $transaksi;
+        return view("admin.order.index", $data);
     }
 
     /**
@@ -61,14 +63,22 @@ class OrderController extends Controller
     // ini buat form
     public function show($id)
     {
-        $beli = DB::table('packages')
-        ->select(
-            'packages.id',
-            'packages.name_pack'
-        )
-        ->get();
-        $data2['packages'] = $beli;
-        return view("pages.form", $data2);
+
+        $detail = DB::table('transactions')->join('packages', 'transactions.package_id', '=', 'packages.id')
+            ->join('users', 'transactions.users_id', '=', 'users.id')
+            ->select(
+                'transactions.id',
+                'users.name',
+                'packages.name_pack',
+                'transactions.date',
+                'transactions.status',
+                'transactions.location',
+                'transactions.description',
+                'transactions.total',
+            )
+            ->where('transactions.id', $id)
+            ->first();
+        return view('admin.order.detail_order', ['detail' => $detail]);
     }
 
     /**
@@ -79,7 +89,21 @@ class OrderController extends Controller
      */
     public function edit($id)
     {
-        //
+        $edit = DB::table('transactions')->join('packages', 'transactions.package_id', '=', 'packages.id')
+            ->join('users', 'transactions.users_id', '=', 'users.id')
+            ->select(
+                'transactions.id',
+                'users.name',
+                'packages.name_pack',
+                'transactions.date',
+                'transactions.status',
+                'transactions.location',
+                'transactions.description',
+                'transactions.total',
+            )
+            ->where('transactions.id', $id)
+            ->first();
+        return view('admin.order.edit', ['edit' => $edit]);
     }
 
     /**
@@ -91,7 +115,20 @@ class OrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $update = DB::table('transactions') ->join('packages', 'transactions.package_id', '=', 'packages.id')
+        ->join('users', 'transactions.users_id', '=', 'users.id')
+        ->where('transactions.id', $id)
+        ->update([
+            'packages.name_pack' => $request->get('paket'),
+            'transactions.date' => $request->get('tanggal'),
+            'transactions.status' => $request->get('status'),
+            'transactions.location' => $request->get('lokasi'),
+            'transactions.description' => $request->get('deskripsi'),
+            'transactions.total' => $request->get('total')
+        ]);
+
+
+    return redirect('/order');
     }
 
     /**
@@ -102,6 +139,21 @@ class OrderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $delete = DB::table('transactions')->join('packages', 'transactions.package_id', '=', 'packages.id')
+            ->join('users', 'transactions.users_id', '=', 'users.id')
+            ->select(
+                'transactions.id',
+                'users.name',
+                'packages.name_pack',
+                'transactions.date',
+                'transactions.status',
+                'transactions.location',
+                'transactions.description',
+                'transactions.total',
+            )
+            ->where('transactions.id', $id);
+           
+        $delete->delete();
+        return redirect()->route('order.index');
     }
 }
