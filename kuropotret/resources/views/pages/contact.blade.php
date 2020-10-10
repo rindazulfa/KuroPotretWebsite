@@ -12,6 +12,7 @@
           <div class="breadcrumb_iner text-center">
             <div class="breadcrumb_iner_item">
               <h2>contact</h2>
+              <a href="{{route('contact.create')}}" class="btn_2">Kritik & Saran</a>
             </div>
           </div>
         </div>

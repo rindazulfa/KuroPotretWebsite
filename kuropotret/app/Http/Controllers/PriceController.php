@@ -39,7 +39,20 @@ class PriceController extends Controller
      */
     public function create()
     {
-        //
+        $paket = DB::table('packages')
+            ->select(
+                'packages.id',
+                'packages.name_pack',
+                'packages.price',
+                'packages.qty_photos',
+                'packages.qty_edit',
+                'packages.duration',
+                'packages.working_hours',
+                'packages.price_operational'
+            )
+            ->get();
+        $data['packages'] = $paket;
+        return view('pages.form', $data);
     }
 
     /**
@@ -50,7 +63,15 @@ class PriceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $create = DB::table('transactions')->join('packages', 'transactions.package_id', '=', 'packages.id')
+        ->join('users', 'transactions.users_id', '=', 'users.id')
+        ->insert([
+            'packages.package_id' => $request->get('paket'),
+            'transactions.date' => $request->get('tanggal'),
+            'transactions.location' => $request->get('lokasi'),
+            'transactions.description' => $request->get('deskripsi')
+        ]);
+        return redirect('/pricing');
     }
 
     /**

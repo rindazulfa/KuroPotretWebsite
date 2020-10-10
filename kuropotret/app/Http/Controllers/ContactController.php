@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -23,7 +24,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.form_contact');
     }
 
     /**
@@ -34,7 +35,14 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $create = DB::table('contact')
+        ->insert([
+            'name' => $request->get('nama'),
+            'email' => $request->get('email'),
+            'no_phone' => $request->get('hp'),
+            'pesan' => $request->get('pesan')
+        ]);
+        return redirect('/contact');
     }
 
     /**

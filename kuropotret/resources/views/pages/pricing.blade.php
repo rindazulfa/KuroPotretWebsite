@@ -37,7 +37,7 @@
                             <li>{{$key->price_operational}}</li>
                         </ul>
                         <!-- ini button -->
-                        <a href="{{url('order/form')}}" class="btn_2">book Now</a>
+                        <a href="{{route('pricing.create')}}" class="btn_2">Pesan Sekarang</a>
                     </div>
                     
                 </div>
