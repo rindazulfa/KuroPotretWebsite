@@ -13,7 +13,10 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        if(session('email')=='admin@gmail.com'){
+            return view('dashboard');
+        }
+        session()->flush();
     }
 
     /**

@@ -13,7 +13,11 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        if(session('email')=='admin@gmail.com'){
+            return view('admin.index');
+        }
+        return redirect("/");
+
     }
 
     /**

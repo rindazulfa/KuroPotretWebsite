@@ -3,9 +3,11 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get("login", "AuthController@getLogin");
+Route::get("register", "AuthController@getRegister")->name('register');
+Route::post("register", "AuthController@register")->name('register.post');
 Route::post("login", "AuthController@postLogin")->name("login");
 
-Route::group(['middleware' => ['auth'=>'CustomMiddleware:admin,customer']], function () {
+Route::group(['middleware' => ['auth'=>'CustomMiddleware:admin']], function () {
 
 Route::get("logout", "AuthController@logout")->name("logout");
 Route::resource('admin','AdminController');
