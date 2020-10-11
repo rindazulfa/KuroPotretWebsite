@@ -20,7 +20,6 @@ class CustomMiddleware
             $email =   Session::get('email');
             $user = User::where('email', $email)->first();
             if(in_array($user->role,$roles)){
-
                 return $next($request);
             }
         }

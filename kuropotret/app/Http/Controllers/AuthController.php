@@ -56,4 +56,13 @@ class AuthController extends Controller
             return redirect("/");
         }
     }
+
+    public function logoutFrontend()
+    {
+        if(session()->has('email')){
+            session()->forget('email');
+            session()->forget('login');
+            return redirect("/");
+        }
+    }
 }

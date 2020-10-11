@@ -28,7 +28,7 @@
                                 </li>
                                 @if(session()->has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{route('logout')}}">Logout</a>
+                                    <a class="nav-link" href="{{route('logout.frontend')}}">Logout</a>
                                 </li>
                                 @else
                                 <li class="nav-item">
