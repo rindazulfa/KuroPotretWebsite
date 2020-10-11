@@ -27,7 +27,8 @@ class AuthController extends Controller
         if ($validator->fails()) {
             return back()->withErrors($validator->errors());
         }else{
-            session()->flush();
+            session()->forget('email');
+            session()->forget('login');
             $user = User::where('email', $request->get('email'))->firstOrFail();
             if($user){
                 if(Hash::check($request->get('password'), $user->password)){
@@ -49,8 +50,9 @@ class AuthController extends Controller
 
     public function logout()
     {
-        if(session('login')){
-            session()->flush();
+        if(session()->has('email')){
+            session()->forget('email');
+            session()->forget('login');
             return redirect("/");
         }
     }
