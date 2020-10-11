@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-
+use  App\User;
+use Illuminate\Support\Facades\Session;
+use App\package;
+use App\transaction;
 use Illuminate\Support\Facades\DB;
 
 class PriceController extends Controller
@@ -69,15 +72,22 @@ class PriceController extends Controller
      */
     public function store(Request $request)
     {
-        $create = DB::table('transactions')->join('packages', 'transactions.package_id', '=', 'packages.id')
-        ->join('users', 'transactions.users_id', '=', 'users.id')
-        ->insert([
-            'packages.package_id' => $request->get('paket'),
-            'transactions.date' => $request->get('tanggal'),
-            'transactions.location' => $request->get('lokasi'),
-            'transactions.description' => $request->get('deskripsi')
-        ]);
-        return redirect('/pricing');
+        if(session('login')){
+            $email =   Session::get('email');
+            $user = User::where('email', $email)->first();
+            $pack = package::find($request->get('paket'));
+            $trs = new transaction();
+            $trs->users_id=$user->id;
+            $trs->package_id = $pack->id;
+            $trs->status = 1;
+            $trs->date = $request->get('tanggal');
+            $trs->location = $request->get('lokasi');
+            $trs->description = $request->get('deskripsi');
+            $trs->total = $pack->price;
+            $trs->save();
+            return redirect('/pricing');
+        }
+
     }
 
     /**
