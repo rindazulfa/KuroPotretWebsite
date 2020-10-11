@@ -20,7 +20,7 @@ class CreateTransactionsTable extends Migration
             $table->unsignedBigInteger('package_id');
             $table->foreign('package_id')->references('id')->on('packages')->onDelete('cascade');
             $table->date("date");
-            $table->integer("status");
+            $table->integer("status")->nullable();
             $table->string("location");
             $table->string("description");
             $table->integer("total");

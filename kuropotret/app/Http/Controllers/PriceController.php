@@ -79,7 +79,6 @@ class PriceController extends Controller
             $trs = new transaction();
             $trs->users_id=$user->id;
             $trs->package_id = $pack->id;
-            $trs->status = 1;
             $trs->date = $request->get('tanggal');
             $trs->location = $request->get('lokasi');
             $trs->description = $request->get('deskripsi');

@@ -37,10 +37,11 @@
                                         <th>Nama Pembeli</th>
                                         <th>Paket</th>
                                         <th>Tanggal</th>
-                                        <th>Status</th>
                                         <th>Lokasi</th>
                                         <th>Deskripsi</th>
                                         <th>Total</th>
+                                        <th>Status</th>
+                                        <th>Keterangan</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -50,10 +51,33 @@
                                         <td>{{$key->name}}</td>
                                         <td>{{$key->name_pack}}</td>
                                         <td>{{$key->date}}</td>
-                                        <td>{{$key->status}}</td>
                                         <td>{{$key->location}}</td>
                                         <td>{{$key->description}}</td>
                                         <td>{{number_format($key->total,2,',','.')}}</td>
+                                        <!-- <td>{{$key->status}}</td> -->
+                                        @if($key->status)
+                                        @if($key->status == 1)
+                                        <td>Diterima</td>
+                                        @include('sweetalert::alert')
+                                        @else
+                                        <td>Ditolak</td>
+                                        @endif
+                                        @else
+                                        <td>
+                                            <form method="post" action="{{route('order.update-sts', [$key->id])}}">
+                                                @csrf
+                                                <input type="hidden" name="status" value="1" />
+                                                <button class="btn btn-sm text-white btn-success" type="submit">Terima</button>
+                                            </form>
+
+                                            <form method="post" action="{{route('order.update-sts', [$key->id])}}">
+                                                @csrf
+                                                <input type="hidden" name="status" value="0" />
+                                                <button class="btn btn-sm text-white btn-danger" type="submit">Tolak</button>
+                                            </form>
+
+                                        </td>
+                                        @endif
                                         <td>
                                             <a class="btn btn-sm text-white btn-primary" href="{{route('order.show',[$key->id])}}">Detail</a>
                                         </td>
