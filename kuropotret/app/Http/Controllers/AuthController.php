@@ -65,4 +65,35 @@ class AuthController extends Controller
             return redirect("/");
         }
     }
+
+    public function getRegister()
+    {
+        return view("auth.register");
+    }
+
+    public function register(Request $request)
+    {
+        $validator = Validator::make(request()->all(), [
+            'name' => "required",
+            'email' => "required",
+            'password' => 'required|same:password_confirm',
+            'password_confirm'=>'required'
+        ]);
+        if ($validator->fails()) {
+            return back()->withErrors($validator->errors());
+        }else{
+            $user = new User();
+            $user->name = $request->get('name');
+            $user->email = $request->get('email');
+            $user->username = $request->get('username');
+            $user->ktp = $request->get('ktp');
+            $user->no_phone = $request->get('phone');
+            $user->location = $request->get('location');
+            $user->email = $request->get('email');
+            $user->role = "customer";
+            $user->password = Hash::make($request->get('password'));
+            $user->save();
+            return redirect("register")->with('success', 'Successfully register');
+        }
+    }
 }
