@@ -12,7 +12,10 @@ class AuthController extends Controller
 {
     public function getLogin()
     {
-        return view("auth.login");
+        if(!session('login')){
+            return view("auth.login");
+        }
+        return redirect("/");
     }
 
     public function postLogin(Request $request)
