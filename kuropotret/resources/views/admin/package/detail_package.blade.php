@@ -38,7 +38,7 @@
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                                 <label for="">Harga</label>
-                                <h5 class="text-dark">{{$detail->price}}</h5>
+                                <h5 class="text-dark">{{number_format($detail->price,2,',','.')}}</h5>
                             </div>
                             <div class="w-100"></div>
                             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
@@ -81,7 +81,7 @@
             <div class="modal-dialog" role="document">
                 <form action="{{route('package.destroy', [$detail -> id])}}" method="post">
                 @csrf
-                @method('delete')    
+                @method('delete')
                 <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Hapus Paket</h5>

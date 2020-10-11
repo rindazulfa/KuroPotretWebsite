@@ -26,6 +26,11 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{url('contact')}}">contact</a>
                                 </li>
+                                @if(session()->has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{route('logout')}}">Logout</a>
+                                </li>
+                            @endif
                             </ul>
                         </div>
                     </nav>

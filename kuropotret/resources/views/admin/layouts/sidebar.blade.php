@@ -53,6 +53,14 @@
                         <span class="nav-text">Kunjungi halaman</span>
                     </a>
                 </li>
+                <li class="has-sub ">
+
+                <a class="sidenav-item-link" href="{{route("logout")}}">
+                        <i class="mdi"></i>
+                        <span class="nav-text">Logout</span>
+                    </a>
+
+                </li>
             </ul>
         </div>
     </div>

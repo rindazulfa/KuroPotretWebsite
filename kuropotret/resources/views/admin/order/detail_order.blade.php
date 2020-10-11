@@ -60,7 +60,7 @@
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                                 <label for="">Total</label>
-                                <h5 class="text-dark">{{$detail->total}}</h5>
+                                <h5 class="text-dark">{{number_format($detail->total,2,',','.')}}</h5>
                             </div>
                         </div>
                         <a href="{{route('order.edit',[$detail->id])}}" class="mr-2 btn btn-warning btn-pill text-white">
@@ -81,7 +81,7 @@
             <div class="modal-dialog" role="document">
                 <form action="{{route('order.destroy', [$detail -> id])}}" method="post">
                 @csrf
-                @method('delete')    
+                @method('delete')
                 <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Hapus Paket</h5>

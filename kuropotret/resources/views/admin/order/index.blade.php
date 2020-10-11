@@ -53,7 +53,7 @@
                                         <td>{{$key->status}}</td>
                                         <td>{{$key->location}}</td>
                                         <td>{{$key->description}}</td>
-                                        <td>{{$key->total}}</td>
+                                        <td>{{number_format($key->total,2,',','.')}}</td>
                                         <td>
                                             <a class="btn btn-sm text-white btn-primary" href="{{route('order.show',[$key->id])}}">Detail</a>
                                         </td>

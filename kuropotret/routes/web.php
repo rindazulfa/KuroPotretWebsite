@@ -20,10 +20,17 @@ Route::get('/', function () {
     //master- nama file
 });
 // Route::resource('dashboard','DashboardController');
-Route::resource('pricing','PriceController');
+Route::resource('pricing','PriceController',['only'=>['index']]);
 Route::resource('about','AboutController');
 Route::resource('contact','ContactController');
 Route::resource('portofolio','PortofolioController');
+
+Route::group(['middleware' => ['auth'=>'CustomMiddleware:customer']], function () {
+    Route::resource('pricing','PriceController',['only'=>['create','store']]);
+});
+
+
+
 // Route::resource('order/form','OrderController',['only'=>['show']]);
 
 require('admin.php');

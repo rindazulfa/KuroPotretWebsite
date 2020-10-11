@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
@@ -39,7 +40,8 @@ class PriceController extends Controller
      */
     public function create()
     {
-        $paket = DB::table('packages')
+        if(session('login')){
+            $paket = DB::table('packages')
             ->select(
                 'packages.id',
                 'packages.name_pack',
@@ -53,6 +55,10 @@ class PriceController extends Controller
             ->get();
         $data['packages'] = $paket;
         return view('pages.form', $data);
+        }else{
+            return redirect("/login");
+        }
+
     }
 
     /**
@@ -124,5 +130,23 @@ class PriceController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function createdata()
+    {
+        $paket = DB::table('packages')
+        ->select(
+            'packages.id',
+            'packages.name_pack',
+            'packages.price',
+            'packages.qty_photos',
+            'packages.qty_edit',
+            'packages.duration',
+            'packages.working_hours',
+            'packages.price_operational'
+        )
+        ->get();
+        $data['packages'] = $paket;
+        return view('pages.form', $data);
     }
 }

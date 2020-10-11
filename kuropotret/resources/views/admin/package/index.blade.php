@@ -48,7 +48,7 @@
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
                                         <td>{{$key->name_pack}}</td>
-                                        <td>Rp {{$key->price}}</td>
+                                        <td>Rp {{number_format($key->price,2,',','.')}}</td>
                                         <td>{{$key->qty_photos}}</td>
                                         <td>{{$key->qty_edit}}</td>
                                         <td>{{$key->duration}}</td>
