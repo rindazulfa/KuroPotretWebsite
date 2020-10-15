@@ -18,6 +18,8 @@ Route::resource('package','PackageController');
 Route::resource('order','OrderController');
 // Route::resource('tambahproduct','TambahproductController');
 Route::post('/order/update-sts/{id}','OrderController@update_sts')->name('order.update-sts');
+Route::resource('user','UserController');
+Route::resource('kritik','PesanController');
 
 });
 ?>

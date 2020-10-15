@@ -55,7 +55,7 @@
 
     @include('layouts.footer');
     <div class="fixed-bottom">
-        <a href="https://api.whatsapp.com/send?phone=6287869618049" target="_blank"><img src="img/chatwa.png" alt="Chat Whatsapp" width="10%" style="float: right; margin: 20px"></a>
+        <a href="https://api.whatsapp.com/send?phone=6287869618049" target="_blank"><img src="/img/chatwa.png" alt="Chat Whatsapp" width="10%" style="float: right; margin: 20px"></a>
     </div>
 
     <!-- jquery plugins here-->

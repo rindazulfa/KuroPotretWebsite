@@ -72,6 +72,7 @@
                                 <label for="password_confirm">Password Confirmation</label>
                             </div>
                             <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign Up</button>
+                            <a class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" href="{{route("login")}}">Login</a>
                             <hr class="my-4">
                         </form>
                     </div>

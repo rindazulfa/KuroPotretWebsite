@@ -17,38 +17,38 @@
                 <li>
                     <h6 class="px-4 py-2">Menu</h6>
                 </li>
-                <li class="has-sub active">
+                <li class="has-sub {{ Request::is('/') ? 'active' : '' }}">
                     <a class="sidenav-item-link" href="#">
                         <i class="mdi mdi-account-box-multiple"></i>
                         <span class="nav-text">Dashboard</span>
                     </a>
                 </li>
-                <li class="has-sub ">
+                <li class="has-sub {{ Request::is('package') ? 'active' : '' }}">
                     <a class="sidenav-item-link" href="{{url('package')}}">
                         <i class="mdi mdi-archive"></i>
                         <span class="nav-text">Packages</span>
                     </a>
                 </li>
-                <li class="has-sub ">
+                <li class="has-sub {{ Request::is('order') ? 'active' : '' }}">
                     <a class="sidenav-item-link" href="{{url('order')}}">
                         <i class="mdi mdi-account-supervisor-circle"></i>
                         <span class="nav-text">Order</span>
                     </a>
                 </li>
-                <li class="has-sub ">
-                    <a class="sidenav-item-link" href="#">
+                <li class="has-sub {{ Request::is('kritik') ? 'active' : '' }}">
+                    <a class="sidenav-item-link" href="{{url('kritik')}}">
                         <i class="mdi mdi-email-outline"></i>
                         <span class="nav-text">Contact</span>
                     </a>
                 </li>
-                <li class="has-sub ">
-                    <a class="sidenav-item-link" href="{{url('users')}}">
+                <li class="has-sub {{ Request::is('user') ? 'active' : '' }}">
+                    <a class="sidenav-item-link" href="{{url('user')}}">
                         <i class="mdi mdi-email-plus-outline"></i>
                         <span class="nav-text">Users</span>
                     </a>
                 </li>
                 <li class="has-sub ">
-                    <a class="sidenav-item-link" href="/rt/pengumuman">
+                    <a class="sidenav-item-link" href="{{url('/')}}">
                         <i class="mdi mdi-message-alert-outline"></i>
                         <span class="nav-text">Kunjungi halaman</span>
                     </a>
