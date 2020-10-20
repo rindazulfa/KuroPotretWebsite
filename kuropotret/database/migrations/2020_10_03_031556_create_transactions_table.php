@@ -22,6 +22,8 @@ class CreateTransactionsTable extends Migration
             $table->date("date");
             $table->integer("status")->nullable();
             $table->string("location");
+            $table->integer("price_operational");
+            $table->string("pict");
             $table->string("description");
             $table->integer("total");
             $table->softDeletes();

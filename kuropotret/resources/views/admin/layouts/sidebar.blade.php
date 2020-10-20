@@ -17,8 +17,8 @@
                 <li>
                     <h6 class="px-4 py-2">Menu</h6>
                 </li>
-                <li class="has-sub {{ Request::is('/') ? 'active' : '' }}">
-                    <a class="sidenav-item-link" href="#">
+                <li class="has-sub {{ Request::is('admin') ? 'active' : '' }}">
+                    <a class="sidenav-item-link" href="{{url('admin')}}">
                         <i class="mdi mdi-account-box-multiple"></i>
                         <span class="nav-text">Dashboard</span>
                     </a>

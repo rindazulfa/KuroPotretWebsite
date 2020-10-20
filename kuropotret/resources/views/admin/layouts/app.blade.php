@@ -87,8 +87,7 @@
     <script src="{{asset('admin_asset/assets/js/sleek.bundle.js')}}"></script>
 
     <script src="{{asset('admin_asset/assets/plugins/charts/Chart.min.js')}}"></script>
-
-
+    <script src="https://unpkg.com/chartjs-plugin-colorschemes"></script>
     <!-- Data Table -->
     <script src="{{asset('admin_asset/assets/plugins/select2/js/select2.min.js')}}"></script>
     <script src="{{asset('admin_asset/assets/plugins/data-tables/jquery.datatables.min.js')}}"></script>
@@ -131,6 +130,7 @@
             });
         });
     </script>
+    @stack('script')
 </body>
 
 </html>

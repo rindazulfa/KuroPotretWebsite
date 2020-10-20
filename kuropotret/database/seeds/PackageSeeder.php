@@ -3,6 +3,7 @@
 // use Facade\Ignition\Support\Packagist\Package;
 use Illuminate\Database\Seeder;
 use App\package;
+
 class PackageSeeder extends Seeder
 {
     /**
@@ -18,8 +19,7 @@ class PackageSeeder extends Seeder
             'qty_photos' => 'Unlimited foto',
             'qty_edit' => '30 edit foto',
             'duration' => '3-5 menit video',
-            'working_hours' => '10 jam penyewaan',
-            'price_operational' => '*tidak termasuk biaya operasional'
+            'working_hours' => '10 jam penyewaan'
         ]);
         Package::create([
             'name_pack' => 'Akad',
@@ -27,8 +27,7 @@ class PackageSeeder extends Seeder
             'qty_photos' => 'Unlimited foto',
             'qty_edit' => '30 edit foto',
             'duration' => '3-5 menit video',
-            'working_hours' => '4 jam penyewaan',
-            'price_operational' => '*tidak termasuk biaya operasional'
+            'working_hours' => '4 jam penyewaan'
         ]);
         Package::create([
             'name_pack' => 'Wedding & Akad',
@@ -36,8 +35,7 @@ class PackageSeeder extends Seeder
             'qty_photos' => 'Unlimited foto',
             'qty_edit' => '45 edit foto',
             'duration' => '3-5 menit video',
-            'working_hours' => '',
-            'price_operational' => '*tidak termasuk biaya operasional'
+            'working_hours' => ''
         ]);
         Package::create([
             'name_pack' => 'Pre-Wedding',
@@ -45,8 +43,7 @@ class PackageSeeder extends Seeder
             'qty_photos' => 'Unlimited foto',
             'qty_edit' => '30 edit foto',
             'duration' => '3-5 menit video',
-            'working_hours' => '4 jam penyewaan',
-            'price_operational' => '*tidak termasuk biaya operasional'
+            'working_hours' => '4 jam penyewaan'
         ]);
         Package::create([
             'name_pack' => 'Video Musik',
@@ -54,9 +51,7 @@ class PackageSeeder extends Seeder
             'qty_photos' => '1 foto thumbnail',
             'qty_edit' => '1 edit foto',
             'duration' => 'full musik',
-            'working_hours' => '',
-            'price_operational' => '*tidak termasuk biaya operasional'
+            'working_hours' => ''
         ]);
-        
     }
 }

@@ -18,8 +18,11 @@ class OrderSeeder extends Seeder
             'date' => '2022-02-10',
             'status' => 1,
             'location' => 'Semarang',
+            'price_operational' => 1000000,
+            'pict' => 'rinda.jpeg',
             'description' => 'Lebih ke pemandangan ya',
             'total' => 1500000
+        
         ]);
     }
 }

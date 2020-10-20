@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\package;
+
+use App\Exports\PackageExport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
-
+use Maatwebsite\Excel\Facades\Excel;
 class PackageController extends Controller
 {
     /**
@@ -24,13 +26,16 @@ class PackageController extends Controller
                 'packages.qty_photos',
                 'packages.qty_edit',
                 'packages.duration',
-                'packages.working_hours',
-                'packages.price_operational'
+                'packages.working_hours'
             )
             ->get();
         $data['packages'] = $paket;
         return view("admin.package.index", $data);
     }
+    public function export_excel()
+	{
+		return Excel::download(new PackageExport, 'package.xlsx');
+	}
 
     /**
      * Show the form for creating a new resource.
@@ -58,8 +63,7 @@ class PackageController extends Controller
                 'qty_photos' => $request->get('jml_foto'),
                 'qty_edit' => $request->get('jml_edit'),
                 'duration' => $request->get('durasi'),
-                'working_hours' => $request->get('penyewaan'),
-                'price_operational' => $request->get('biaya')
+                'working_hours' => $request->get('penyewaan')
             ]);
             return redirect('/package');
     }
@@ -105,8 +109,7 @@ class PackageController extends Controller
                 'qty_photos' => $request->get('jml_foto'),
                 'qty_edit' => $request->get('jml_edit'),
                 'duration' => $request->get('durasi'),
-                'working_hours' => $request->get('penyewaan'),
-                'price_operational' => $request->get('biaya_operasional')
+                'working_hours' => $request->get('penyewaan')
             ]);
 
 

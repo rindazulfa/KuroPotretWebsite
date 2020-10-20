@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class AdminController extends Controller
 {
@@ -13,11 +15,34 @@ class AdminController extends Controller
      */
     public function index()
     {
-        if(session('email')=='admin@gmail.com'){
-            return view('admin.index');
+        if (session('email') == 'admin@gmail.com') {
+            //Jmlah Pesanan
+            $jumlah_produk = DB::table('transactions')->select('total')->count('total');
+            $data['pesanan'] = $jumlah_produk;
+
+            //Jumlah Paket 
+            $jumlah_paket = DB::table('packages')->select('name_pack')->count('name_pack');
+            $data['paket'] = $jumlah_paket;
+
+
+            // Menampilkan tabel pesanan
+            $packages = DB::table('transactions')->join('packages', 'transactions.package_id', '=', 'packages.id')
+                ->join('users', 'transactions.users_id', '=', 'users.id')->get();
+            $data['transactions'] = $packages;
+
+
+            //Jumlah Paket 
+            $jumlah_paket = DB::table('transactions')
+            ->select('package_id',DB::raw('count(*) as total'))->groupBy('package_id')->get();
+            $data['perpaket'] = $jumlah_paket;
+            //raw = untuk kondisi diantara string dan int
+    
+
+
+
+            return view('admin.index', $data);
         }
         return redirect("/");
-
     }
 
     /**

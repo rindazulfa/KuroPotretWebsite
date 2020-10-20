@@ -11,20 +11,20 @@
             <div class="col-lg-3 col-md-4 col-sm-12">
                 <div class="card bg-primary card-default">
                     <div class="card-body text-white">
-                        <h5 class="card-title">Jumlah Omset</h5>
-                        <span class="h2 mt-2">5</span>
+                        <h5 class="card-title">Jumlah Pesanan</h5>
+                        <span class="h2 mt-2">{{$pesanan}}</span>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 col-md-4 col-sm-12">
                 <div class="card bg-success card-default">
                     <div class="card-body text-white">
-                        <h5 class="card-title">Jumlah Keuntungan</h5>
-                        <span class="h2 mt-2">1</span>
+                        <h5 class="card-title">Jumlah Paket</h5>
+                        <span class="h2 mt-2">{{$paket}}</span>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="col-lg-12 col-md-4 col-sm-12">
                 <div class="card card-default">
                     <div class="card-header card-header-border-bottom">
                         <h2>Summary</h2>
@@ -32,16 +32,27 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-12 mb-4 text-center">
-                                <h5 class="mt-2 mb-4">Penjualan per Produk</h5>
-                                <canvas id="produk-chart"></canvas>
-                            </div>
-                            <div class="col-lg-6 col-md-6 col-sm-12 mb-4 text-center">
-                                <h5 class="mt-2 mb-4">Pekerjaan</h5>
-                                <canvas id="pekerjaan-chart"></canvas>
+                                <h5 class="mt-2 mb-4">Penjualan per Paket</h5>
+                                <canvas id="paket-chart"></canvas>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="card card-default">
+                    <div class="card-header card-header-border-bottom">
+                        <h2>Summary</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12 mb-4 text-center">
+                                <h5 class="mt-2 mb-4">Pesanan</h5>
+                                <canvas id="myChart" width="400" height="400"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12">
                 <div class="card card-default">
@@ -62,57 +73,34 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Nama Pelanggan</th>
-                                        <th>Tanggal Pesan</th>
-                                        <th>Total Pesanan</th>
+                                        <th>Nama Pembeli</th>
+                                        <th>Paket</th>
+                                        <th>Tanggal</th>
+                                        <th>Lokasi</th>
+                                        <th>Deskripsi</th>
+                                        <th>Total</th>
+                                        <th>Status</th>
                                         <th>Keterangan</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                  
-                                        <!-- Baris 1 -->
-                                        <tr>
-                                            <th scope="row">  </th>
-                                            <td>  </td>
-                                            <td> </td>
-                                            <td> </td>
-                                            <td>
-                                                <!-- Detail -->
-                                                <div style="float: left">
-                                                    <form action="" method="get">
-                                                        <input type="hidden" name="id_pesanan">
-                                                        <button class="btn btn-primary btn-sm" type="submit"> Detail </button>
-                                                    </form>
-                                                </div>
-                                                <!-- Delete -->
-                                                <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="<?php echo '#deleteModal-' ?>">Delete</button>
-                                                <!-- Modal Delete -->
-                                                <div class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                    <form action="" method="get">
-                                                        <div class="modal-dialog" role="document">
-                                                            <div class="modal-content">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title" id="exampleModalLabel">Delete Pesanan Pelanggan </h5>
-                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </div>
-                                                                <div class="modal-body">
-                                                                    <input type="hidden"  name="id_pesanan">
-                                                                    Apakah yakin untuk delete?
-                                                                </div>
-                                                                <div class="modal-footer">
-                                                                    <button type="submit" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                                    <button type="delete" class="btn btn-danger">Delete</button>
 
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                   
+                                    <!-- Baris 1 -->
+                                    @foreach($transactions as $key)
+                                    <tr>
+                                        <td>{{$loop->iteration}}</td>
+                                        <td>{{$key->name}}</td>
+                                        <td>{{$key->name_pack}}</td>
+                                        <td>{{$key->date}}</td>
+                                        <td>{{$key->location}}</td>
+                                        <td>{{$key->description}}</td>
+                                        <td>{{number_format($key->total,2,',','.')}}</td>
+                                        <td>{{$key ->status}}</td>
+                                        <td>
+                                            <a class="btn btn-sm text-white btn-primary" href="{{route('order.show',[$key->id])}}">Detail</a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
 
                                 </tbody>
                             </table>
@@ -123,28 +111,25 @@
             <div class="col-lg-4 col-md-8 col-sm-12">
                 <div class="card card-default">
                     <div class="card-header card-header-border-bottom">
-                        <h2>Produk</h2>
+                        <h2>Paket</h2>
                     </div>
                     <div class="card-body">
-                        <p class="mb-4">Pengelolaan data produk yang akan dijual</p>
-                        <a href="/dbpw192_18410100132/pages/produk/create.php" class="btn btn-primary mb-4">
-                            Tambah Produk
+                        <p class="mb-4">Pengelolaan data paket yang akan dijual</p>
+                        <a href="{{route('package.create')}}" class="btn btn-primary mb-4">
+                            Tambah Paket
                         </a>
-                        <a href="/dbpw192_18410100132/pages/produk/index.php" class="btn btn-outline-secondary mb-4">
+                        <a href="{{url('package')}}" class="btn btn-outline-secondary mb-4">
                             Lihat Data
                         </a>
                     </div>
                 </div>
                 <div class="card card-default">
                     <div class="card-header card-header-border-bottom">
-                        <h2>Bahan Baku</h2>
+                        <h2>Kritik & Saran</h2>
                     </div>
                     <div class="card-body">
-                        <p class="mb-4">Pengelolaan data bahan baku untuk memperkirakan bahan yang diperlukan</p>
-                        <a href="/dbpw192_18410100132/pages/bahan_baku/create.php" class="btn btn-primary mb-4">
-                            Tambah Bahan
-                        </a>
-                        <a href="/dbpw192_18410100132/pages/bahan_baku/index.php" class="btn btn-outline-secondary mb-4">
+                        <p class="mb-4">Pengelolaan data kritik & saran untuk mengetahui kepuasan pelanggan</p>
+                        <a href="{{url('kritik')}}" class="btn btn-outline-secondary mb-4">
                             Lihat Data
                         </a>
                     </div>
@@ -154,4 +139,78 @@
 
     </div>
 </div>
+
 @endsection
+@push('script')
+<script>
+    new Chart(document.getElementById("paket-chart"), {
+        type: 'pie',
+        data: {
+            labels: ["Laki-Laki", "Perempuan"],
+            datasets: [{
+                label: "Jenis Kelamin (orang)",
+                data: [
+                    3,
+                    2
+                ]
+            }]
+        },
+        options: {
+            legend: {
+                position: 'bottom'
+            },
+            plugins: {
+                colorschemes: {
+                    scheme: 'brewer.Paired12'
+                }
+            }
+        }
+    });
+</script>
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Paket 1', 'Paket 2', 'Paket 3', 'Paket 4', 'Paket 5', 'Paket 6'],
+            datasets: [{
+                label: 'Paket 1',
+                data: [
+                    <?php
+                    foreach ($perpaket as $key => $value) {
+                        echo $value->total.','; 
+                    }
+                    ?>
+
+                ],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>
+@endpush

@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Exports\UserExport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Maatwebsite\Excel\Facades\Excel;
 class UserController extends Controller
 {
     /**
@@ -28,6 +30,10 @@ class UserController extends Controller
         $data['users'] = $user;
         return view("admin.user.index", $data);
     }
+    public function export_excel()
+	{
+		return Excel::download(new UserExport, 'users.xlsx');
+	}
 
     /**
      * Show the form for creating a new resource.

@@ -21,7 +21,7 @@
                         <div class="d-flex justify-content-between mb-4">
                             <p class="">Data Paket</p>
                             <div>
-                                <a href="/" target="" class="btn btn-outline-success btn-sm text-uppercase">
+                                <a href="/package/export_excel" target="" class="btn btn-outline-success btn-sm text-uppercase">
                                     <i class="fas fa-file-excel"></i> Export Excel
                                 </a>
                                 <a href="/" target="" class="btn btn-outline-info btn-sm text-uppercase">
@@ -39,7 +39,6 @@
                                         <th>Jumlah Edit</th>
                                         <th>Durasi</th>
                                         <th>Penyewaan</th>
-                                        <th>Biaya Operasional</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -52,7 +51,6 @@
                                         <td>{{$key->qty_photos}}</td>
                                         <td>{{$key->qty_edit}}</td>
                                         <td>{{$key->duration}}</td>
-                                        <td>{{$key->price_operational}}</td>
                                         <td>
                                             <a class="btn btn-sm text-white btn-primary" href="{{route('package.show',[$key->id])}}">Detail</a>
                                         </td>

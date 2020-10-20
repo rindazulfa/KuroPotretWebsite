@@ -21,7 +21,6 @@ class CreatePackagesTable extends Migration
             $table->string("qty_edit");
             $table->string("duration");
             $table->string("working_hours");
-            $table->string("price_operational");
             $table->softDeletes();
             $table->timestamps();
         });

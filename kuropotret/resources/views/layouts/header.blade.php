@@ -18,13 +18,16 @@
                                     <a class="nav-link" href="{{url('about')}}">About</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{url('pricing')}}">Pricing</a>
-                                </li>
-                                <li class="nav-item">
                                     <a class="nav-link" href="{{url('portofolio')}}">Portofolio</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{url('contact')}}">contact</a>
+                                    <a class="nav-link" href="{{url('pricing')}}">Pricing</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url('checkout')}}">Checkout</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url('contact')}}">Contact</a>
                                 </li>
                                 @if(session()->has('login'))
                                 <li class="nav-item">

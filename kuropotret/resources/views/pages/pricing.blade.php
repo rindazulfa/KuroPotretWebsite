@@ -34,7 +34,6 @@
                             <li>{{$key->qty_photos}}</li>
                             <li>{{$key->qty_edit}}</li>
                             <li>{{$key->duration}}</li>
-                            <li>{{$key->price_operational}}</li>
                         </ul>
                         <!-- ini button -->
                         <a href="{{route('pricing.create')}}" class="btn_2">Pesan Sekarang</a>

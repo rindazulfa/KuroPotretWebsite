@@ -6,7 +6,7 @@ use App\transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
-
+use Maatwebsite\Excel\Facades\Excel;
 class OrderController extends Controller
 {
     /**
@@ -25,6 +25,8 @@ class OrderController extends Controller
                 'transactions.date',
                 'transactions.status',
                 'transactions.location',
+                'transactions.price_operational',
+                'transactions.pict',
                 'transactions.description',
                 'transactions.total',
 
@@ -92,6 +94,8 @@ class OrderController extends Controller
                 'transactions.date',
                 'transactions.status',
                 'transactions.location',
+                'transactions.price_operational',
+                'transactions.pict',
                 'transactions.description',
                 'transactions.total',
             )
@@ -117,6 +121,8 @@ class OrderController extends Controller
                 'transactions.date',
                 'transactions.status',
                 'transactions.location',
+                'transactions.price_operational',
+                'transactions.pict',
                 'transactions.description',
                 'transactions.total',
             )
@@ -142,6 +148,8 @@ class OrderController extends Controller
                 'transactions.date' => $request->get('tanggal'),
                 'transactions.status' => $request->get('status'),
                 'transactions.location' => $request->get('lokasi'),
+                'transactions.price_operational' => $request->get('biaya'),
+                'transactions.pict'=> $request->get('bukti'),
                 'transactions.description' => $request->get('deskripsi'),
                 'transactions.total' => $request->get('total')
             ]);
@@ -167,6 +175,8 @@ class OrderController extends Controller
                 'transactions.date',
                 'transactions.status',
                 'transactions.location',
+                'transactions.price_operational',
+                'transactions.pict',
                 'transactions.description',
                 'transactions.total',
             )

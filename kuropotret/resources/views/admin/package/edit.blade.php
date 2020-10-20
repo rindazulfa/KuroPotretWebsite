@@ -57,10 +57,7 @@
                                     <label>Penyewaan</label>
                                     <input type="text" class="form-control" name="penyewaan" value="{{$edit->working_hours}}">
                                 </div>
-                                <div class="form-row col-lg-4 col-md-6 col-sm-12 mb-4">
-                                    <label>Biaya Operasional</label>
-                                    <input type="text" class="form-control" name="biaya_operasional" value="{{$edit->price_operational}}">
-                                </div>
+                            
 
                             </div>
                         </div>

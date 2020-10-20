@@ -58,10 +58,7 @@
                                 <label for="">Penyewaan</label>
                                 <h5 class="text-dark">{{$detail->working_hours}}</h5>
                             </div>
-                            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                                <label for="">Biaya Operasional</label>
-                                <h5 class="text-dark">{{$detail->price_operational}}</h5>
-                            </div>
+                       
                         </div>
                         <a href="{{route('package.edit',[$detail->id])}}" class="mr-2 btn btn-warning btn-pill text-white">
                             <i class="mdi mdi-circle-edit-outline"></i>

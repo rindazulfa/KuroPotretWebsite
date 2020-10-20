@@ -54,10 +54,7 @@
                                 <label>Penyewaan</label>
                                 <input type="text" class="form-control" name="penyewaan">
                             </div>
-                            <div class="form-row mb-4 col-lg-4 col-md-6 col-sm-12">
-                                <label>Biaya Operasional</label>
-                                <input type="text" class="form-control" name="biaya">
-                            </div>
+                        
                         </div>
                     </div>
                 </div>

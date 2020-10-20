@@ -40,6 +40,10 @@
                                 <label for="">Paket</label>
                                 <h5 class="text-dark">{{$detail->name_pack}}</h5>
                             </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                                <label for="">Bukti Pembayaran</label>
+                                <!-- <h5 class="text-dark">{{$detail->name}}</h5> -->
+                            </div>
                             <div class="w-100"></div>
                             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                                 <label for="">Tanggal</label>
@@ -51,8 +55,8 @@
                             </div>
                             <div class="w-100"></div>
                             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                                <label for="">Status</label>
-                                <h5 class="text-dark">{{$detail->status}}</h5>
+                                <label for="">Biaya Operasional</label>
+                                <h5 class="text-dark">{{$detail->price_operational}}</h5>
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                                 <label for="">Deskripsi</label>
@@ -80,9 +84,9 @@
         <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <form action="{{route('order.destroy', [$detail -> id])}}" method="post">
-                @csrf
-                @method('delete')
-                <div class="modal-content">
+                    @csrf
+                    @method('delete')
+                    <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Hapus Paket</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">

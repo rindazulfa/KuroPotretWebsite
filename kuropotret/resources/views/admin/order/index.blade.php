@@ -38,7 +38,7 @@
                                         <th>Paket</th>
                                         <th>Tanggal</th>
                                         <th>Lokasi</th>
-                                        <th>Deskripsi</th>
+                                        <th>Biaya Operasional</th>
                                         <th>Total</th>
                                         <th>Status</th>
                                         <th>Keterangan</th>
@@ -52,7 +52,7 @@
                                         <td>{{$key->name_pack}}</td>
                                         <td>{{$key->date}}</td>
                                         <td>{{$key->location}}</td>
-                                        <td>{{$key->description}}</td>
+                                        <td>{{$key->price_operational}}</td>
                                         <td>{{number_format($key->total,2,',','.')}}</td>
                                         <!-- <td>{{$key->status}}</td> -->
                                         @if($key->status)

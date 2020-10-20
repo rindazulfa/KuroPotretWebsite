@@ -27,8 +27,7 @@ class PriceController extends Controller
                 'packages.qty_photos',
                 'packages.qty_edit',
                 'packages.duration',
-                'packages.working_hours',
-                'packages.price_operational'
+                'packages.working_hours'
             )
             ->get();
         $data['packages'] = $paket;
@@ -52,8 +51,7 @@ class PriceController extends Controller
                 'packages.qty_photos',
                 'packages.qty_edit',
                 'packages.duration',
-                'packages.working_hours',
-                'packages.price_operational'
+                'packages.working_hours'
             )
             ->get();
         $data['packages'] = $paket;
@@ -151,8 +149,7 @@ class PriceController extends Controller
             'packages.qty_photos',
             'packages.qty_edit',
             'packages.duration',
-            'packages.working_hours',
-            'packages.price_operational'
+            'packages.working_hours'
         )
         ->get();
         $data['packages'] = $paket;

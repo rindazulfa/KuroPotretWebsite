@@ -17,7 +17,7 @@
                         <div class="d-flex justify-content-between mb-4">
                             <p class="">Data User</p>
                             <div>
-                                <a href="/" target="" class="btn btn-outline-success btn-sm text-uppercase">
+                                <a href="/user/export_excel" target="" class="btn btn-outline-success btn-sm text-uppercase">
                                     <i class="fas fa-file-excel"></i> Export Excel
                                 </a>
                                 <a href="/" target="" class="btn btn-outline-info btn-sm text-uppercase">
