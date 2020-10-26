@@ -11,6 +11,7 @@ Route::group(['middleware' => ['auth'=>'CustomMiddleware:admin']], function () {
 
 Route::get("logout", "AuthController@logout")->name("logout");
 Route::get('/package/export_excel', 'PackageController@export_excel');
+// Route::get('/admin/export_excel', 'AdminController@export_excel');
 Route::resource('admin','AdminController');
 Route::resource('package','PackageController');
 

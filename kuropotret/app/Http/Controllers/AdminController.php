@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Exports\OrderExport;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
@@ -33,10 +33,20 @@ class AdminController extends Controller
 
             //Jumlah Paket 
             $jumlah_paket = DB::table('transactions')
-            ->select('package_id',DB::raw('count(*) as total'))->groupBy('package_id')->get();
+                ->select('package_id', DB::raw('count(*) as total'))->groupBy('package_id')->get();
             $data['perpaket'] = $jumlah_paket;
             //raw = untuk kondisi diantara string dan int
-    
+
+
+            // laporan oi
+            $getDataReport = DB::table('transactions')->select(DB::raw('sum(total) as `data`'),  DB::raw('YEAR(date) year, MONTH(date) month'))
+                ->groupby('year', 'month')
+                ->get();
+
+            $data['report'] = $getDataReport;
+
+
+
 
 
 
@@ -44,6 +54,10 @@ class AdminController extends Controller
         }
         return redirect("/");
     }
+    // public function export_excel()
+	// {
+	// 	return Excel::download(new OrderExport, 'pesanan.xlsx');
+	// }
 
     /**
      * Show the form for creating a new resource.

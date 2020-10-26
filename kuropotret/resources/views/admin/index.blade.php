@@ -27,7 +27,7 @@
             <div class="col-lg-12 col-md-4 col-sm-12">
                 <div class="card card-default">
                     <div class="card-header card-header-border-bottom">
-                        <h2>Summary</h2>
+                        <h2>Laporan Pendapatan</h2>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -61,7 +61,7 @@
                     </div>
                     <div class="card-body">
                         <div class="mb-2">
-                            <a href="/" target="" class="btn btn-outline-success btn-sm text-uppercase">
+                            <a href="/order/export_excel" target="" class="btn btn-outline-success btn-sm text-uppercase">
                                 <i class="fas fa-file-excel"></i> Export Excel
                             </a>
                             <a href="/" target="" class="btn btn-outline-info btn-sm text-uppercase">
@@ -140,29 +140,40 @@
     </div>
 </div>
 
-@endsection
+"@endsection
 @push('script')
 <script>
     new Chart(document.getElementById("paket-chart"), {
-        type: 'pie',
+        type: 'bar',
         data: {
-            labels: ["Laki-Laki", "Perempuan"],
+            labels: [
+                <?php
+                foreach ($report as $key => $value) {
+                    echo "'" . $value->month . "-" . $value->year . "'" . ",";
+                }
+                ?>
+            ],
             datasets: [{
-                label: "Jenis Kelamin (orang)",
+                label: 'Pendapatan',
                 data: [
-                    3,
-                    2
-                ]
+                    <?php
+                    foreach ($report as $key => $value) {
+                        echo $value->data . ",";
+                    }
+                    ?>
+                ],
+                backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+                borderWidth: 1
             }]
         },
         options: {
-            legend: {
-                position: 'bottom'
-            },
-            plugins: {
-                colorschemes: {
-                    scheme: 'brewer.Paired12'
-                }
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
             }
         }
     });
@@ -178,7 +189,7 @@
                 data: [
                     <?php
                     foreach ($perpaket as $key => $value) {
-                        echo $value->total.','; 
+                        echo $value->total . ',';
                     }
                     ?>
 

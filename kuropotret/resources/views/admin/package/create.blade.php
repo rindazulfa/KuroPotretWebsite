@@ -30,25 +30,25 @@
                         <div class="card-body row">
                             <div class="form-row mb-4 col-lg-4 col-md-6 col-sm-12">
                                 <label>Nama Paket</label>
-                                <input type="text" class="form-control" name="nama" placeholder="Masukan Nama Tamu">
+                                <input type="text" class="form-control" name="nama" placeholder="Masukan Nama Paket">
                             </div>
                             <div class="form-row mb-4 col-lg-2 col-md-6 col-sm-12">
                                 <label>Harga</label>
-                                <input type="number" class="form-control" name="harga" placeholder="Masukan Periode Tamu">
+                                <input type="number" class="form-control" name="harga" placeholder="Masukan Harga">
                             </div>
                             <div class="w-100"></div>
                             <div class="form-row mb-4 col-lg-4 col-md-6 col-sm-12">
                                 <label>Jumlah Foto</label>
-                                <input type="text" class="form-control" name="jml_foto" placeholder="Masukan Tujuan Tamu">
+                                <input type="text" class="form-control" name="jml_foto" placeholder="Masukan Jumlah Foto">
                             </div>
                             <div class="form-row mb-4 col-lg-4 col-md-6 col-sm-12">
                                 <label>Jumlah Edit</label>
-                                <input type="text" class="form-control" name="jml_edit">
+                                <input type="text" class="form-control" name="jml_edit" placeholder="Masukan Jumlah Edit">
                             </div>
                             <div class="w-100"></div>
                             <div class="form-row mb-4 col-lg-4 col-md-6 col-sm-12">
                                 <label>Durasi</label>
-                                <input type="text" class="form-control" name="durasi" placeholder="Masukan Tujuan Tamu">
+                                <input type="text" class="form-control" name="durasi" placeholder="Masukan Durasi">
                             </div>
                             <div class="form-row mb-4 col-lg-4 col-md-6 col-sm-12">
                                 <label>Penyewaan</label>

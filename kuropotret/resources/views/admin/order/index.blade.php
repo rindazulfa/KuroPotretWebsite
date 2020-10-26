@@ -4,12 +4,8 @@
 <div class="content-wrapper">
     <div class="content">
         <div class="breadcrumb-wrapper">
-            <h1>Data Paket</h1>
-            <br>
-            <a href="{{route('package.create')}}" target="" class="btn btn-outline-primary text-uppercase">
-                <i class="fas fa-plus-circle mr-2"></i> Tambah Order
-            </a>
-        </div>
+            <h1>Data Order</h1>
+               </div>
 
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
@@ -21,7 +17,7 @@
                         <div class="d-flex justify-content-between mb-4">
                             <p class="">Data Order</p>
                             <div>
-                                <a href="/" target="" class="btn btn-outline-success btn-sm text-uppercase">
+                                <a href="/order/export_excel" target="" class="btn btn-outline-success btn-sm text-uppercase">
                                     <i class="fas fa-file-excel"></i> Export Excel
                                 </a>
                                 <a href="/" target="" class="btn btn-outline-info btn-sm text-uppercase">
@@ -38,10 +34,10 @@
                                         <th>Paket</th>
                                         <th>Tanggal</th>
                                         <th>Lokasi</th>
-                                        <th>Biaya Operasional</th>
+                                        <th>DP</th>
                                         <th>Total</th>
-                                        <th>Status</th>
                                         <th>Keterangan</th>
+                                        <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -52,8 +48,11 @@
                                         <td>{{$key->name_pack}}</td>
                                         <td>{{$key->date}}</td>
                                         <td>{{$key->location}}</td>
-                                        <td>{{$key->price_operational}}</td>
+                                        <td>{{$key->dp}}</td>
                                         <td>{{number_format($key->total,2,',','.')}}</td>
+                                        <td>
+                                            <a class="btn btn-sm text-white btn-primary" href="{{route('order.show',[$key->id])}}">Detail</a>
+                                        </td>
                                         <!-- <td>{{$key->status}}</td> -->
                                         @if($key->status)
                                         @if($key->status == 1)
@@ -63,6 +62,7 @@
                                         <td>Ditolak</td>
                                         @endif
                                         @else
+              
                                         <td>
                                             <form method="post" action="{{route('order.update-sts', [$key->id])}}">
                                                 @csrf
@@ -78,9 +78,7 @@
 
                                         </td>
                                         @endif
-                                        <td>
-                                            <a class="btn btn-sm text-white btn-primary" href="{{route('order.show',[$key->id])}}">Detail</a>
-                                        </td>
+
                                     </tr>
                                     @endforeach
                                 </tbody>

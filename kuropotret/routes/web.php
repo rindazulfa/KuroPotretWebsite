@@ -23,15 +23,18 @@ Route::get('/', function () {
 require('admin.php');
 
 // Route::resource('dashboard','DashboardController');
-Route::resource('pricing','PriceController',['only'=>['index']]);
+Route::resource('pricing','PriceController',['only'=>['index','show']]);
 Route::resource('about','AboutController');
 Route::resource('contact','ContactController');
 Route::resource('portofolio','PortofolioController');
 
 Route::group(['middleware' => ['auth'=>'CustomMiddleware:customer']], function () {
     Route::get("logout/frontend", "AuthController@logoutFrontend")->name("logout.frontend");
+    Route::get('getprice/{id}', 'PriceController@getprice');
     Route::resource('pricing','PriceController',['only'=>['create','store']]);
 });
+
+Route::resource('checkout', 'CheckoutController');
 
 
 

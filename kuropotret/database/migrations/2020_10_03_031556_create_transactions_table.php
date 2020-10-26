@@ -19,11 +19,12 @@ class CreateTransactionsTable extends Migration
             $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('package_id');
             $table->foreign('package_id')->references('id')->on('packages')->onDelete('cascade');
+            $table->unsignedBigInteger('details_id');
+            $table->foreign('details_id')->references('id')->on('details')->onDelete('cascade');
             $table->date("date");
+            $table->integer("dp");
             $table->integer("status")->nullable();
-            $table->string("location");
-            $table->integer("price_operational");
-            $table->string("pict");
+            $table->string("pict")->nullable();
             $table->string("description");
             $table->integer("total");
             $table->softDeletes();

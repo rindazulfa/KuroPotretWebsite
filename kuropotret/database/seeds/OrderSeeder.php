@@ -15,13 +15,13 @@ class OrderSeeder extends Seeder
         transaction::create([
             'users_id' => '1',
             'package_id' => '1',
+            'details_id' => '1',
             'date' => '2022-02-10',
+            'dp' => 0,
             'status' => 1,
-            'location' => 'Semarang',
-            'price_operational' => 1000000,
             'pict' => 'rinda.jpeg',
             'description' => 'Lebih ke pemandangan ya',
-            'total' => 1500000
+            'total' => 1520000
         
         ]);
     }

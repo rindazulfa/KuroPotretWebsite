@@ -49,17 +49,21 @@
                                     <label>Lokasi</label>
                                     <input type="text" class="form-control" name="lokasi" value="{{$edit->location}}">
                                 </div>
-                                <div class="form-row col-lg-4 col-md-6 col-sm-12 mb-4">
-                                    <label>Status</label>
-                                    <input type="text" class="form-control" name="status" value="{{$edit->status}}">
-                                </div>
-                                <div class="form-row col-lg-4 col-md-6 col-sm-12 mb-4">
+                                          <div class="form-row col-lg-4 col-md-6 col-sm-12 mb-4">
                                     <label>Deskripsi</label>
                                     <input type="text" class="form-control" name="deskripsi" value="{{$edit->description}}">
                                 </div>
                                 <div class="form-row col-lg-4 col-md-6 col-sm-12 mb-4">
+                                    <label>DP</label>
+                                    <input type="number" class="form-control" name="biaya" value="{{$edit->dp}}">
+                                </div>
+                                <div class="form-row col-lg-4 col-md-6 col-sm-12 mb-4">
+                                    <label>Transportasi</label>
+                                    <input type="number" class="form-control" name="biaya_transportasi" value="{{$edit->price_transportation}}">
+                                </div>
+                                <div class="form-row col-lg-4 col-md-6 col-sm-12 mb-4">
                                     <label>Total</label>
-                                    <input type="text" class="form-control" name="total" value="{{$edit->total}}">
+                                    <input type="number" class="form-control" disabled  name="total" value="{{$edit->total}}">
                                 </div>
 
                             </div>

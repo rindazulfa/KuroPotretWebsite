@@ -37,10 +37,20 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{url('login')}}">Login</a>
                                 </li>
+                                <li>
+                                    
+                                </li>
 
-                            @endif
+
                             </ul>
                         </div>
+                        <!-- <div class="dropdown cart">
+                            <a class="dropdown-toggle" href="{{url('checkout')}}">
+                                <i class="flaticon-bag"></i>
+                            </a>
+                        </div> -->
+                        
+                        @endif
                     </nav>
                 </div>
             </div>

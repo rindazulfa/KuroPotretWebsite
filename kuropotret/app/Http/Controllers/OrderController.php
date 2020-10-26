@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Exports\OrderExport;
 use App\transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -18,24 +18,29 @@ class OrderController extends Controller
     {
         $transaksi = DB::table('transactions')->join('packages', 'transactions.package_id', '=', 'packages.id')
             ->join('users', 'transactions.users_id', '=', 'users.id')
+            ->join('details', 'transactions.details_id', '=', 'details.id')
             ->select(
                 'transactions.id',
                 'users.name',
                 'packages.name_pack',
                 'transactions.date',
                 'transactions.status',
-                'transactions.location',
-                'transactions.price_operational',
+                'details.location',
+                'details.price_transportation',
+                'transactions.dp',
                 'transactions.pict',
                 'transactions.description',
-                'transactions.total',
+                'transactions.total'
 
             )
             ->get();
         $data['transactions'] = $transaksi;
         return view("admin.order.index", $data);
     }
-
+    public function export_excel()
+	{
+		return Excel::download(new OrderExport, 'order.xlsx');
+	}
     /**
      * Show the form for creating a new resource.
      *
@@ -61,7 +66,7 @@ class OrderController extends Controller
     }
     public function create()
     {
-        //
+        // return view('admin.order.create');
     }
 
     /**
@@ -72,7 +77,7 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+ 
     }
 
     /**
@@ -87,17 +92,20 @@ class OrderController extends Controller
 
         $detail = DB::table('transactions')->join('packages', 'transactions.package_id', '=', 'packages.id')
             ->join('users', 'transactions.users_id', '=', 'users.id')
+            ->join('details', 'transactions.details_id', '=', 'details.id')
             ->select(
                 'transactions.id',
                 'users.name',
                 'packages.name_pack',
                 'transactions.date',
                 'transactions.status',
-                'transactions.location',
-                'transactions.price_operational',
+                'details.location',
+                'details.price_transportation',
+                'transactions.dp',
                 'transactions.pict',
                 'transactions.description',
-                'transactions.total',
+                'transactions.total'
+
             )
             ->where('transactions.id', $id)
             ->first();
@@ -114,17 +122,19 @@ class OrderController extends Controller
     {
         $edit = DB::table('transactions')->join('packages', 'transactions.package_id', '=', 'packages.id')
             ->join('users', 'transactions.users_id', '=', 'users.id')
+            ->join('details', 'transactions.details_id', '=', 'details.id')
             ->select(
                 'transactions.id',
                 'users.name',
                 'packages.name_pack',
                 'transactions.date',
                 'transactions.status',
-                'transactions.location',
-                'transactions.price_operational',
+                'details.location',
+                'details.price_transportation',
+                'transactions.dp',
                 'transactions.pict',
                 'transactions.description',
-                'transactions.total',
+                'transactions.total'
             )
             ->where('transactions.id', $id)
             ->first();
@@ -140,20 +150,36 @@ class OrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $update = DB::table('transactions')->join('packages', 'transactions.package_id', '=', 'packages.id')
+
+        $getTable = DB::table('transactions')->join('packages', 'transactions.package_id', '=', 'packages.id')
             ->join('users', 'transactions.users_id', '=', 'users.id')
-            ->where('transactions.id', $id)
+            ->join('details', 'transactions.details_id', '=', 'details.id')
+            ->where('transactions.id', $id);
+
+
+        $getPrice = $getTable->get('packages.price')->first()->price;
+        $total = $request->get('biaya_transportasi') + $getPrice - $request->get('biaya');
+
+
+// HALOOOO
+
+
+
+
+
+
+        $update = $getTable
             ->update([
                 'packages.name_pack' => $request->get('paket'),
                 'transactions.date' => $request->get('tanggal'),
                 'transactions.status' => $request->get('status'),
-                'transactions.location' => $request->get('lokasi'),
-                'transactions.price_operational' => $request->get('biaya'),
+                'details.location' => $request->get('lokasi'),
+                'details.price_transportation' => $request->get('biaya_transportasi'),
+                'transactions.dp' => $request->get('biaya'),
                 'transactions.pict'=> $request->get('bukti'),
                 'transactions.description' => $request->get('deskripsi'),
-                'transactions.total' => $request->get('total')
+                'transactions.total' => $total
             ]);
-
 
         return redirect('/order');
     }
@@ -168,17 +194,19 @@ class OrderController extends Controller
     {
         $delete = DB::table('transactions')->join('packages', 'transactions.package_id', '=', 'packages.id')
             ->join('users', 'transactions.users_id', '=', 'users.id')
+            ->join('details', 'transactions.details_id', '=', 'details.id')
             ->select(
                 'transactions.id',
                 'users.name',
                 'packages.name_pack',
                 'transactions.date',
                 'transactions.status',
-                'transactions.location',
-                'transactions.price_operational',
+                'details.location',
+                'details.price_transportation',
+                'transactions.dp',
                 'transactions.pict',
                 'transactions.description',
-                'transactions.total',
+                'transactions.total'
             )
             ->where('transactions.id', $id);
 

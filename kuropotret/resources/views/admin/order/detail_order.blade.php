@@ -42,6 +42,7 @@
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                                 <label for="">Bukti Pembayaran</label>
+                                <a href="{{asset('storage/bukti/pesan/'.$detail->pict)}}"><br> Bukti Upload</a>
                                 <!-- <h5 class="text-dark">{{$detail->name}}</h5> -->
                             </div>
                             <div class="w-100"></div>
@@ -55,8 +56,12 @@
                             </div>
                             <div class="w-100"></div>
                             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                                <label for="">Biaya Operasional</label>
-                                <h5 class="text-dark">{{$detail->price_operational}}</h5>
+                                <label for="">DP</label>
+                                <h5 class="text-dark">{{number_format($detail->dp,2,',','.')}}</h5>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                                <label for="">Biaya Transportasi</label>
+                                <h5 class="text-dark">{{number_format($detail->price_transportation,2,',','.')}}</h5>
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
                                 <label for="">Deskripsi</label>

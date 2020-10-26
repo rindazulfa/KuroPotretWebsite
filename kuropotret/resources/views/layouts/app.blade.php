@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Kuro Potret</title>
-    <link rel="icon" href="{{url('img/favicon.png')}}">
     <!-- Bootstrap CSS -->
+    <link rel="icon" href="{{url('img/favicon.png')}}">
     
     <link rel="stylesheet" href="{{url('css/bootstrap.min.css')}}">
     <!-- animate CSS -->
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="{{url('css/flaticon.css')}}">
     <link rel="stylesheet" href="{{url('css/themify-icons.css')}}">
     <link rel="stylesheet" href="{{url('css/swiper.min.css')}}">
-    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="{{url('css/nice-select.css')}}">
     <!-- font awesome CSS -->
     <link rel="stylesheet" href="{{url('css/magnific-popup.css')}}">
     <!-- swiper CSS -->
@@ -86,7 +86,10 @@
     <!-- custom js -->
     <script src="{{url('js/custom.js')}}"></script>
 
+    @stack('script')
     
+
 </body>
+    
 
 </html>
